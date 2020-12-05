@@ -1,0 +1,25 @@
+<?php return array (
+  'parameters' => 
+  array (
+    'database_host' => '127.0.0.1',
+    'database_port' => '',
+    'database_name' => 'getideashop',
+    'database_user' => 'root',
+    'database_password' => '',
+    'database_prefix' => 'ps_',
+    'database_engine' => 'InnoDB',
+    'mailer_transport' => 'smtp',
+    'mailer_host' => '127.0.0.1',
+    'mailer_user' => NULL,
+    'mailer_password' => NULL,
+    'secret' => 'NWb85wWBAj30H22up35ajai2PMF1Opk1aeN9OTp3PJOqVCw07qEHEF77WgbP512y',
+    'ps_caching' => 'CacheMemcache',
+    'ps_cache_enable' => false,
+    'ps_creation_date' => '2020-12-05',
+    'locale' => 'id-ID',
+    'use_debug_toolbar' => true,
+    'cookie_key' => 'ZxvzJ0rpwstfgBFZMskF0az7m0WUVyLoAdNJWHc0aMsj6V8EMIjRvGzfvuStPHdG',
+    'cookie_iv' => 'yG0kk1om8Z9wHDJQBLUmvAp4RKhk7HhU',
+    'new_cookie_key' => 'def0000007021bd864e6d978e02e8fb91865024849c1fd2c1122b2a1e4dee8a9c9ead9420c6e72814ea6f842a4786387f72d200d2ed803c89eebdca1dd93ba760af58fe4',
+  ),
+);

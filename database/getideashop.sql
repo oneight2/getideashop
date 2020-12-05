@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 05, 2020 at 08:30 AM
+-- Generation Time: Dec 05, 2020 at 09:12 AM
 -- Server version: 10.4.16-MariaDB
 -- PHP Version: 7.3.24
 
@@ -1152,7 +1152,9 @@ CREATE TABLE `ps_admin_filter` (
 --
 
 INSERT INTO `ps_admin_filter` (`id`, `employee`, `shop`, `controller`, `action`, `filter`, `filter_id`) VALUES
-(1, 1, 1, '', '', '{\"limit\":50,\"orderBy\":\"date_add\",\"sortOrder\":\"DESC\",\"filters\":[]}', 'customer');
+(1, 1, 1, '', '', '{\"limit\":50,\"orderBy\":\"date_add\",\"sortOrder\":\"DESC\",\"filters\":[]}', 'customer'),
+(2, 1, 1, 'meta', 'index', '{\"limit\":50,\"orderBy\":\"id_meta\",\"sortOrder\":\"asc\",\"filters\":[]}', ''),
+(3, 1, 1, 'ProductController', 'catalogAction', '{\"filter_category\":\"\",\"filter_column_id_product\":\"\",\"filter_column_name\":\"\",\"filter_column_reference\":\"\",\"filter_column_name_category\":\"\",\"filter_column_price\":\"\",\"filter_column_sav_quantity\":\"\",\"filter_column_active\":\"\",\"last_offset\":\"0\",\"last_limit\":\"20\",\"last_orderBy\":\"id_product\",\"last_sortOrder\":\"desc\"}', '');
 
 -- --------------------------------------------------------
 
@@ -1504,10 +1506,10 @@ INSERT INTO `ps_authorization_role` (`id_authorization_role`, `slug`) VALUES
 (516, 'ROLE_MOD_MODULE_GSITEMAP_DELETE'),
 (514, 'ROLE_MOD_MODULE_GSITEMAP_READ'),
 (515, 'ROLE_MOD_MODULE_GSITEMAP_UPDATE'),
-(805, 'ROLE_MOD_MODULE_MIDTRANSPAY_CREATE'),
-(808, 'ROLE_MOD_MODULE_MIDTRANSPAY_DELETE'),
-(806, 'ROLE_MOD_MODULE_MIDTRANSPAY_READ'),
-(807, 'ROLE_MOD_MODULE_MIDTRANSPAY_UPDATE'),
+(813, 'ROLE_MOD_MODULE_MIDTRANSPAY_CREATE'),
+(816, 'ROLE_MOD_MODULE_MIDTRANSPAY_DELETE'),
+(814, 'ROLE_MOD_MODULE_MIDTRANSPAY_READ'),
+(815, 'ROLE_MOD_MODULE_MIDTRANSPAY_UPDATE'),
 (809, 'ROLE_MOD_MODULE_MYCARRIER_RJ_CREATE'),
 (812, 'ROLE_MOD_MODULE_MYCARRIER_RJ_DELETE'),
 (810, 'ROLE_MOD_MODULE_MYCARRIER_RJ_READ'),
@@ -2645,7 +2647,10 @@ INSERT INTO `ps_cart` (`id_cart`, `id_shop_group`, `id_shop`, `id_carrier`, `del
 (10, 1, 1, 11, '{\"6\":\"11,\"}', 1, 6, 6, 1, 3, 3, '53cd9d6abf5105748f86912f1dfbe1a7', 0, 0, '', 0, 0, '2020-12-05 14:19:21', '2020-12-05 14:19:40', '{\"checkout-personal-information-step\":{\"step_is_reachable\":true,\"step_is_complete\":true},\"checkout-addresses-step\":{\"step_is_reachable\":true,\"step_is_complete\":true,\"use_same_address\":true},\"checkout-delivery-step\":{\"step_is_reachable\":true,\"step_is_complete\":true},\"checkout-payment-step\":{\"step_is_reachable\":true,\"step_is_complete\":false},\"checksum\":\"c467b244bbf8e790aff4b829018d49631233343d\"}'),
 (11, 1, 1, 0, '', 1, 6, 6, 1, 3, 5, '53cd9d6abf5105748f86912f1dfbe1a7', 0, 0, '', 0, 0, '2020-12-05 14:20:40', '2020-12-05 14:20:40', NULL),
 (12, 1, 1, 13, '{\"6\":\"13,\"}', 1, 6, 6, 1, 3, 3, '53cd9d6abf5105748f86912f1dfbe1a7', 0, 0, '', 0, 0, '2020-12-05 14:20:48', '2020-12-05 14:21:11', '{\"checkout-personal-information-step\":{\"step_is_reachable\":true,\"step_is_complete\":true},\"checkout-addresses-step\":{\"step_is_reachable\":true,\"step_is_complete\":true,\"use_same_address\":true},\"checkout-delivery-step\":{\"step_is_reachable\":true,\"step_is_complete\":true},\"checkout-payment-step\":{\"step_is_reachable\":true,\"step_is_complete\":false},\"checksum\":\"c467b244bbf8e790aff4b829018d49631233343d\"}'),
-(13, 1, 1, 13, '{\"6\":\"13,\"}', 1, 6, 6, 1, 3, 3, '53cd9d6abf5105748f86912f1dfbe1a7', 0, 0, '', 0, 0, '2020-12-05 14:26:53', '2020-12-05 14:27:21', '{\"checkout-personal-information-step\":{\"step_is_reachable\":true,\"step_is_complete\":true},\"checkout-addresses-step\":{\"step_is_reachable\":true,\"step_is_complete\":true,\"use_same_address\":true},\"checkout-delivery-step\":{\"step_is_reachable\":true,\"step_is_complete\":true},\"checkout-payment-step\":{\"step_is_reachable\":true,\"step_is_complete\":false},\"checksum\":\"c467b244bbf8e790aff4b829018d49631233343d\"}');
+(13, 1, 1, 13, '{\"6\":\"13,\"}', 1, 6, 6, 1, 3, 3, '53cd9d6abf5105748f86912f1dfbe1a7', 0, 0, '', 0, 0, '2020-12-05 14:26:53', '2020-12-05 14:27:21', '{\"checkout-personal-information-step\":{\"step_is_reachable\":true,\"step_is_complete\":true},\"checkout-addresses-step\":{\"step_is_reachable\":true,\"step_is_complete\":true,\"use_same_address\":true},\"checkout-delivery-step\":{\"step_is_reachable\":true,\"step_is_complete\":true},\"checkout-payment-step\":{\"step_is_reachable\":true,\"step_is_complete\":false},\"checksum\":\"c467b244bbf8e790aff4b829018d49631233343d\"}'),
+(14, 1, 1, 9, '{\"6\":\"9,\"}', 1, 6, 6, 1, 3, 6, '53cd9d6abf5105748f86912f1dfbe1a7', 0, 0, '', 0, 0, '2020-12-05 14:56:52', '2020-12-05 14:57:45', '{\"checkout-personal-information-step\":{\"step_is_reachable\":true,\"step_is_complete\":true},\"checkout-addresses-step\":{\"step_is_reachable\":true,\"step_is_complete\":true,\"use_same_address\":true},\"checkout-delivery-step\":{\"step_is_reachable\":true,\"step_is_complete\":true},\"checkout-payment-step\":{\"step_is_reachable\":true,\"step_is_complete\":false},\"checksum\":\"f5f93d23ba5f0e10bb6f5c5dbdea3ba4741c18c7\"}'),
+(15, 1, 1, 9, '{\"6\":\"9,\"}', 1, 6, 6, 1, 3, 6, '53cd9d6abf5105748f86912f1dfbe1a7', 0, 0, '', 0, 0, '2020-12-05 15:02:17', '2020-12-05 15:02:41', '{\"checkout-personal-information-step\":{\"step_is_reachable\":true,\"step_is_complete\":true},\"checkout-addresses-step\":{\"step_is_reachable\":true,\"step_is_complete\":true,\"use_same_address\":true},\"checkout-delivery-step\":{\"step_is_reachable\":true,\"step_is_complete\":true},\"checkout-payment-step\":{\"step_is_reachable\":true,\"step_is_complete\":false},\"checksum\":\"f5f93d23ba5f0e10bb6f5c5dbdea3ba4741c18c7\"}'),
+(16, 1, 1, 11, '{\"6\":\"11,\"}', 1, 6, 6, 1, 3, 3, '53cd9d6abf5105748f86912f1dfbe1a7', 0, 0, '', 0, 0, '2020-12-05 15:06:46', '2020-12-05 15:07:24', '{\"checkout-personal-information-step\":{\"step_is_reachable\":true,\"step_is_complete\":true},\"checkout-addresses-step\":{\"step_is_reachable\":true,\"step_is_complete\":true,\"use_same_address\":true},\"checkout-delivery-step\":{\"step_is_reachable\":true,\"step_is_complete\":true},\"checkout-payment-step\":{\"step_is_reachable\":true,\"step_is_complete\":false},\"checksum\":\"1094cb2d3a4c7aeb3a407c46321806b21be382e7\"}');
 
 -- --------------------------------------------------------
 
@@ -2692,7 +2697,10 @@ INSERT INTO `ps_cart_product` (`id_cart`, `id_product`, `id_address_delivery`, `
 (9, 2, 6, 1, 9, 0, 1, '2020-12-05 14:17:57'),
 (10, 2, 6, 1, 9, 0, 1, '2020-12-05 14:19:21'),
 (12, 2, 6, 1, 9, 0, 1, '2020-12-05 14:20:48'),
-(13, 2, 6, 1, 9, 0, 1, '2020-12-05 14:26:53');
+(13, 2, 6, 1, 9, 0, 1, '2020-12-05 14:26:53'),
+(14, 2, 6, 1, 9, 0, 1, '2020-12-05 14:56:52'),
+(15, 2, 6, 1, 9, 0, 1, '2020-12-05 15:02:17'),
+(16, 19, 6, 1, 0, 1, 1, '2020-12-05 15:06:49');
 
 -- --------------------------------------------------------
 
@@ -3293,7 +3301,7 @@ INSERT INTO `ps_configuration` (`id_configuration`, `id_shop_group`, `id_shop`, 
 (5, NULL, NULL, 'PS_GROUP_FEATURE_ACTIVE', '1', '2020-12-05 14:01:18', '2020-12-05 14:01:18'),
 (6, NULL, NULL, 'PS_CURRENCY_DEFAULT', '1', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
 (7, NULL, NULL, 'PS_COUNTRY_DEFAULT', '111', '0000-00-00 00:00:00', '2020-12-05 14:01:19'),
-(8, NULL, NULL, 'PS_REWRITING_SETTINGS', '1', '0000-00-00 00:00:00', '2020-12-05 14:01:19'),
+(8, NULL, NULL, 'PS_REWRITING_SETTINGS', '1', '0000-00-00 00:00:00', '2020-12-05 14:51:56'),
 (9, NULL, NULL, 'PS_ORDER_OUT_OF_STOCK', '0', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
 (10, NULL, NULL, 'PS_LAST_QTIES', '3', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
 (11, NULL, NULL, 'PS_CONDITIONS', '1', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
@@ -3327,7 +3335,7 @@ INSERT INTO `ps_configuration` (`id_configuration`, `id_shop_group`, `id_shop`, 
 (39, NULL, NULL, 'PS_INVCE_INVOICE_ADDR_RULES', '{\"avoid\":[]}', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
 (40, NULL, NULL, 'PS_INVCE_DELIVERY_ADDR_RULES', '{\"avoid\":[]}', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
 (41, NULL, NULL, 'PS_DELIVERY_PREFIX', '#DE', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(42, NULL, NULL, 'PS_DELIVERY_NUMBER', '1', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(42, NULL, NULL, 'PS_DELIVERY_NUMBER', NULL, '0000-00-00 00:00:00', '2020-12-05 14:53:28'),
 (43, NULL, NULL, 'PS_RETURN_PREFIX', '#RE', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
 (44, NULL, NULL, 'PS_INVOICE', '1', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
 (45, NULL, NULL, 'PS_PASSWD_TIME_BACK', '360', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
@@ -3432,7 +3440,7 @@ INSERT INTO `ps_configuration` (`id_configuration`, `id_shop_group`, `id_shop`, 
 (144, NULL, NULL, 'PS_VIRTUAL_PROD_FEATURE_ACTIVE', '1', '0000-00-00 00:00:00', '2020-12-05 14:02:37'),
 (145, NULL, NULL, 'PS_CUSTOMIZATION_FEATURE_ACTIVE', '1', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
 (146, NULL, NULL, 'PS_CART_RULE_FEATURE_ACTIVE', '0', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(147, NULL, NULL, 'PS_PACK_FEATURE_ACTIVE', '1', '0000-00-00 00:00:00', '2020-12-05 14:02:38'),
+(147, NULL, NULL, 'PS_PACK_FEATURE_ACTIVE', '1', '0000-00-00 00:00:00', '2020-12-05 15:12:33'),
 (148, NULL, NULL, 'PS_ALIAS_FEATURE_ACTIVE', '1', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
 (149, NULL, NULL, 'PS_TAX_ADDRESS_TYPE', 'id_address_delivery', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
 (150, NULL, NULL, 'PS_SHOP_DEFAULT', '1', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
@@ -3518,8 +3526,8 @@ INSERT INTO `ps_configuration` (`id_configuration`, `id_shop_group`, `id_shop`, 
 (230, NULL, NULL, 'HOMESLIDER_PAUSE', '7700', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
 (231, NULL, NULL, 'HOMESLIDER_LOOP', '1', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
 (232, NULL, NULL, 'PS_BASE_DISTANCE_UNIT', 'm', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(233, NULL, NULL, 'PS_SHOP_DOMAIN', 'localhost', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(234, NULL, NULL, 'PS_SHOP_DOMAIN_SSL', 'localhost', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(233, NULL, NULL, 'PS_SHOP_DOMAIN', 'localhost', '0000-00-00 00:00:00', '2020-12-05 14:51:57'),
+(234, NULL, NULL, 'PS_SHOP_DOMAIN_SSL', 'localhost', '0000-00-00 00:00:00', '2020-12-05 14:51:57'),
 (235, NULL, NULL, 'PS_SHOP_NAME', 'getideashop', '0000-00-00 00:00:00', '2020-12-05 14:01:19'),
 (236, NULL, NULL, 'PS_SHOP_EMAIL', '1606109@sttgarut.ac.id', '0000-00-00 00:00:00', '2020-12-05 14:01:20'),
 (237, NULL, NULL, 'PS_MAIL_METHOD', '1', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
@@ -3667,58 +3675,11 @@ INSERT INTO `ps_configuration` (`id_configuration`, `id_shop_group`, `id_shop`, 
 (388, NULL, NULL, 'GF_NOT_VIEWED_BADGE', NULL, '2020-12-05 14:04:09', '2020-12-05 14:04:09'),
 (389, NULL, NULL, 'ONBOARDINGV2_CURRENT_STEP', '14', '2020-12-05 14:04:12', '2020-12-05 14:04:33'),
 (390, NULL, NULL, 'ONBOARDINGV2_SHUT_DOWN', '1', '2020-12-05 14:04:20', '2020-12-05 14:04:31'),
-(391, NULL, NULL, 'MT_ORDER_STATE_ID', '14', '2020-12-05 14:07:25', '2020-12-05 14:07:25'),
+(391, NULL, NULL, 'MT_ORDER_STATE_ID', '15', '2020-12-05 14:07:25', '2020-12-05 15:00:02'),
 (392, NULL, NULL, 'CONF_MIDTRANSPAY_FIXED', '0.2', '2020-12-05 14:07:25', '2020-12-05 14:07:25'),
 (393, NULL, NULL, 'CONF_MIDTRANSPAY_VAR', '2', '2020-12-05 14:07:25', '2020-12-05 14:07:25'),
 (394, NULL, NULL, 'CONF_MIDTRANSPAY_FIXED_FOREIGN', '0.2', '2020-12-05 14:07:25', '2020-12-05 14:07:25'),
 (395, NULL, NULL, 'CONF_MIDTRANSPAY_VAR_FOREIGN', '2', '2020-12-05 14:07:25', '2020-12-05 14:07:25'),
-(396, NULL, NULL, 'MT_DISPLAY_TITLE', 'Pembayaran Online via Midtrans', '2020-12-05 14:07:25', '2020-12-05 14:09:38'),
-(397, NULL, NULL, 'MT_DISPLAY_DESCRIPTION', 'Langkah Pembayaran Online Akan Muncul di Halaman Berikutnya', '2020-12-05 14:07:25', '2020-12-05 14:09:38'),
-(398, NULL, NULL, 'MT_3D_SECURE', '1', '2020-12-05 14:07:25', '2020-12-05 14:07:25'),
-(399, NULL, NULL, 'MT_PAYMENT_SUCCESS_STATUS_MAP', '2', '2020-12-05 14:07:25', '2020-12-05 14:07:25'),
-(400, NULL, NULL, 'MT_PAYMENT_FAILURE_STATUS_MAP', '8', '2020-12-05 14:07:25', '2020-12-05 14:07:25'),
-(401, NULL, NULL, 'MT_PAYMENT_CHALLENGE_STATUS_MAP', '14', '2020-12-05 14:07:25', '2020-12-05 14:07:25'),
-(402, NULL, NULL, 'MT_MINAMOUNT', '0', '2020-12-05 14:07:25', '2020-12-05 14:09:38'),
-(403, NULL, NULL, 'MT_ENABLED_ADV', '0', '2020-12-05 14:07:25', '2020-12-05 14:07:25'),
-(404, NULL, NULL, 'MT_ENABLED_MIGS_BTN', '0', '2020-12-05 14:07:25', '2020-12-05 14:07:25'),
-(405, NULL, NULL, 'MT_TITLE_MIGS_BTN', 'Online Payment via Midtrans - MIGS channel', '2020-12-05 14:07:25', '2020-12-05 14:07:25'),
-(406, NULL, NULL, 'MT_BINS_MIGS_BTN', NULL, '2020-12-05 14:07:25', '2020-12-05 14:07:25'),
-(407, NULL, NULL, 'MT_ACQ_MIGS_BTN', NULL, '2020-12-05 14:07:25', '2020-12-05 14:07:25'),
-(408, NULL, NULL, 'MT_ENABLED_INSTALLMENTMIGS_BTN', '0', '2020-12-05 14:07:25', '2020-12-05 14:07:25'),
-(409, NULL, NULL, 'MT_DISABLE_NON_MIGS_BTN', '0', '2020-12-05 14:07:25', '2020-12-05 14:07:25'),
-(410, NULL, NULL, 'MT_TITLE_INSTALLMENTMIGS_BTN', 'Credit Card Installment Payment via Midtrans - MIGS channel', '2020-12-05 14:07:25', '2020-12-05 14:07:25'),
-(411, NULL, NULL, 'MT_BINS_INSTALLMENTMIGS_BTN', NULL, '2020-12-05 14:07:25', '2020-12-05 14:07:25'),
-(412, NULL, NULL, 'MT_ACQ_INSTALLMENTMIGS_BTN', NULL, '2020-12-05 14:07:25', '2020-12-05 14:07:25'),
-(413, NULL, NULL, 'MT_ENABLED_INSTALLMENTOFF_BTN', '0', '2020-12-05 14:07:25', '2020-12-05 14:07:25'),
-(414, NULL, NULL, 'MT_TITLE_INSTALLMENTOFF_BTN', 'Credit Card Installment for other bank via Midtrans', '2020-12-05 14:07:25', '2020-12-05 14:07:25'),
-(415, NULL, NULL, 'MT_BINS_INSTALLMENTOFF_BTN', NULL, '2020-12-05 14:07:25', '2020-12-05 14:07:25'),
-(416, NULL, NULL, 'MT_TERM_INSTALLMENTOFF_BTN', '6,12', '2020-12-05 14:07:25', '2020-12-05 14:07:25'),
-(417, NULL, NULL, 'MT_ENABLED_INSTALLMENTON_BTN', '0', '2020-12-05 14:07:25', '2020-12-05 14:07:25'),
-(418, NULL, NULL, 'MT_TITLE_INSTALLMENTON_BTN', 'Credit Card Installment via Midtrans', '2020-12-05 14:07:25', '2020-12-05 14:07:25'),
-(419, NULL, NULL, 'MT_BINS_INSTALLMENTON_BTN', NULL, '2020-12-05 14:07:25', '2020-12-05 14:07:25'),
-(420, NULL, NULL, 'MT_ENABLED_PROMO_BTN', '0', '2020-12-05 14:07:25', '2020-12-05 14:07:25'),
-(421, NULL, NULL, 'MT_TITLE_PROMO_BTN', 'Online Payment Promo via Midtrans', '2020-12-05 14:07:25', '2020-12-05 14:07:25'),
-(422, NULL, NULL, 'MT_METHOD_PROMO_BTN', NULL, '2020-12-05 14:07:25', '2020-12-05 14:07:25'),
-(423, NULL, NULL, 'MT_BINS_PROMO_BTN', NULL, '2020-12-05 14:07:25', '2020-12-05 14:07:25'),
-(424, NULL, NULL, 'MT_PROMO_CODE', NULL, '2020-12-05 14:07:25', '2020-12-05 14:07:25'),
-(425, NULL, NULL, 'MT_PROMO_CUSTOM_FIELDS', NULL, '2020-12-05 14:07:25', '2020-12-05 14:07:25'),
-(426, NULL, NULL, 'MT_MINAMOUNT_PROMO', '0', '2020-12-05 14:07:25', '2020-12-05 14:19:17'),
-(427, NULL, NULL, 'MT_ENABLED_EXPIRY', '0', '2020-12-05 14:07:25', '2020-12-05 14:07:25'),
-(428, NULL, NULL, 'MT_EXPIRY_DURATION', '24', '2020-12-05 14:07:25', '2020-12-05 14:07:25'),
-(429, NULL, NULL, 'MT_EXPIRY_UNIT', 'hours', '2020-12-05 14:07:25', '2020-12-05 14:07:25'),
-(430, NULL, NULL, 'MT_ENABLED_SAVECARD', '0', '2020-12-05 14:07:25', '2020-12-05 14:07:25'),
-(431, NULL, NULL, 'MT_ENABLED_FIELDS', '0', '2020-12-05 14:07:25', '2020-12-05 14:07:25'),
-(432, NULL, NULL, 'MT_FILEDS', NULL, '2020-12-05 14:07:25', '2020-12-05 14:07:25'),
-(433, NULL, NULL, 'MT_ENABLED_CUSTOMVA_BTN', '0', '2020-12-05 14:07:25', '2020-12-05 14:07:25'),
-(434, NULL, NULL, 'MT_LIST_CUSTOMVA', NULL, '2020-12-05 14:07:25', '2020-12-05 14:07:25'),
-(435, NULL, NULL, 'MT_ENABLED_IGNORE_DENY', '0', '2020-12-05 14:07:25', '2020-12-05 14:07:25'),
-(436, NULL, NULL, 'MT_ENABLED_REDIRECT', '0', '2020-12-05 14:07:25', '2020-12-05 14:07:25'),
-(437, NULL, NULL, 'MT_ENABLED_MAP_FINISH_URL', '0', '2020-12-05 14:07:25', '2020-12-05 14:07:25'),
-(438, NULL, NULL, 'MT_MERCHANT_ID', 'G955101995', '2020-12-05 14:09:38', '2020-12-05 14:09:38'),
-(439, NULL, NULL, 'MT_CLIENT_KEY', 'SB-Mid-client-kzF7mPpvkPXMnqIe', '2020-12-05 14:09:38', '2020-12-05 14:09:38'),
-(440, NULL, NULL, 'MT_SERVER_KEY', 'SB-Mid-server-Na7j1hP2tjUryumpDOv1yLUn', '2020-12-05 14:09:38', '2020-12-05 14:09:38'),
-(441, NULL, NULL, 'MT_KURS', NULL, '2020-12-05 14:09:38', '2020-12-05 14:09:38'),
-(442, NULL, NULL, 'MT_ENVIRONMENT', 'development', '2020-12-05 14:09:38', '2020-12-05 14:09:38'),
 (443, NULL, NULL, 'mycarrier_rj_mcj_mcj', '5', '2020-12-05 14:12:21', '2020-12-05 14:12:21'),
 (444, NULL, NULL, 'mycarrier_rj_mcj_mcj_reference', '5', '2020-12-05 14:12:21', '2020-12-05 14:12:21'),
 (445, NULL, NULL, 'mycarrier_rj_mcj_mcj2', '6', '2020-12-05 14:12:21', '2020-12-05 14:12:21'),
@@ -3740,7 +3701,64 @@ INSERT INTO `ps_configuration` (`id_configuration`, `id_shop_group`, `id_shop`, 
 (461, NULL, NULL, 'mycarrier_rj_mcj_mcj13', '14', '2020-12-05 14:12:22', '2020-12-05 14:12:22'),
 (462, NULL, NULL, 'mycarrier_rj_mcj_mcj13_reference', '14', '2020-12-05 14:12:22', '2020-12-05 14:12:22'),
 (463, NULL, NULL, 'myc_api', 'ccd50b0ce0e837f9864962c2dea856ca', '2020-12-05 14:13:51', '2020-12-05 14:13:51'),
-(464, NULL, NULL, 'myc_city', 'Garut', '2020-12-05 14:13:51', '2020-12-05 14:13:51');
+(464, NULL, NULL, 'myc_city', 'Garut', '2020-12-05 14:13:51', '2020-12-05 14:13:51'),
+(465, NULL, NULL, 'PS_CCCJS_VERSION', '6', '2020-12-05 14:39:34', '2020-12-05 14:51:57'),
+(466, NULL, NULL, 'PS_CCCCSS_VERSION', '6', '2020-12-05 14:39:34', '2020-12-05 14:51:57'),
+(467, NULL, NULL, 'PS_ROUTE_category_rule', '{id}-{rewrite}', '2020-12-05 14:39:34', '2020-12-05 14:39:34'),
+(468, NULL, NULL, 'PS_ROUTE_supplier_rule', 'supplier/{id}-{rewrite}', '2020-12-05 14:39:34', '2020-12-05 14:39:34'),
+(469, NULL, NULL, 'PS_ROUTE_manufacturer_rule', 'brand/{id}-{rewrite}', '2020-12-05 14:39:34', '2020-12-05 14:39:34'),
+(470, NULL, NULL, 'PS_ROUTE_cms_rule', 'content/{id}-{rewrite}', '2020-12-05 14:39:34', '2020-12-05 14:39:34'),
+(471, NULL, NULL, 'PS_ROUTE_cms_category_rule', 'content/category/{id}-{rewrite}', '2020-12-05 14:39:34', '2020-12-05 14:39:34'),
+(472, NULL, NULL, 'PS_ROUTE_module', 'module/{module}{/:controller}', '2020-12-05 14:39:34', '2020-12-05 14:39:34'),
+(473, NULL, NULL, 'PS_ROUTE_product_rule', '{category:/}{id}{-:id_product_attribute}-{rewrite}{-:ean13}.html', '2020-12-05 14:39:34', '2020-12-05 14:39:34'),
+(474, NULL, NULL, 'PS_ROUTE_layered_rule', '{id}-{rewrite}{/:selected_filters}', '2020-12-05 14:39:34', '2020-12-05 14:39:34'),
+(475, NULL, NULL, 'MT_DISPLAY_TITLE', 'Pembayaran Online via Midtrans', '2020-12-05 15:00:02', '2020-12-05 15:02:00'),
+(476, NULL, NULL, 'MT_DISPLAY_DESCRIPTION', 'Langkah Pembayaran Online Akan Muncul di Halaman Berikutnya', '2020-12-05 15:00:02', '2020-12-05 15:02:00'),
+(477, NULL, NULL, 'MT_3D_SECURE', '1', '2020-12-05 15:00:02', '2020-12-05 15:00:02'),
+(478, NULL, NULL, 'MT_PAYMENT_SUCCESS_STATUS_MAP', '2', '2020-12-05 15:00:02', '2020-12-05 15:00:02'),
+(479, NULL, NULL, 'MT_PAYMENT_FAILURE_STATUS_MAP', '8', '2020-12-05 15:00:02', '2020-12-05 15:00:02'),
+(480, NULL, NULL, 'MT_PAYMENT_CHALLENGE_STATUS_MAP', '15', '2020-12-05 15:00:02', '2020-12-05 15:00:02'),
+(481, NULL, NULL, 'MT_MINAMOUNT', '0', '2020-12-05 15:00:02', '2020-12-05 15:02:00'),
+(482, NULL, NULL, 'MT_ENABLED_ADV', '0', '2020-12-05 15:00:02', '2020-12-05 15:00:02'),
+(483, NULL, NULL, 'MT_ENABLED_MIGS_BTN', '0', '2020-12-05 15:00:02', '2020-12-05 15:00:02'),
+(484, NULL, NULL, 'MT_TITLE_MIGS_BTN', 'Online Payment via Midtrans - MIGS channel', '2020-12-05 15:00:02', '2020-12-05 15:00:02'),
+(485, NULL, NULL, 'MT_BINS_MIGS_BTN', NULL, '2020-12-05 15:00:02', '2020-12-05 15:00:02'),
+(486, NULL, NULL, 'MT_ACQ_MIGS_BTN', NULL, '2020-12-05 15:00:02', '2020-12-05 15:00:02'),
+(487, NULL, NULL, 'MT_ENABLED_INSTALLMENTMIGS_BTN', '0', '2020-12-05 15:00:02', '2020-12-05 15:00:02'),
+(488, NULL, NULL, 'MT_DISABLE_NON_MIGS_BTN', '0', '2020-12-05 15:00:02', '2020-12-05 15:00:02'),
+(489, NULL, NULL, 'MT_TITLE_INSTALLMENTMIGS_BTN', 'Credit Card Installment Payment via Midtrans - MIGS channel', '2020-12-05 15:00:02', '2020-12-05 15:00:02'),
+(490, NULL, NULL, 'MT_BINS_INSTALLMENTMIGS_BTN', NULL, '2020-12-05 15:00:02', '2020-12-05 15:00:02'),
+(491, NULL, NULL, 'MT_ACQ_INSTALLMENTMIGS_BTN', NULL, '2020-12-05 15:00:02', '2020-12-05 15:00:02'),
+(492, NULL, NULL, 'MT_ENABLED_INSTALLMENTOFF_BTN', '0', '2020-12-05 15:00:02', '2020-12-05 15:00:02'),
+(493, NULL, NULL, 'MT_TITLE_INSTALLMENTOFF_BTN', 'Credit Card Installment for other bank via Midtrans', '2020-12-05 15:00:02', '2020-12-05 15:00:02'),
+(494, NULL, NULL, 'MT_BINS_INSTALLMENTOFF_BTN', NULL, '2020-12-05 15:00:02', '2020-12-05 15:00:02'),
+(495, NULL, NULL, 'MT_TERM_INSTALLMENTOFF_BTN', '6,12', '2020-12-05 15:00:02', '2020-12-05 15:00:02'),
+(496, NULL, NULL, 'MT_ENABLED_INSTALLMENTON_BTN', '0', '2020-12-05 15:00:02', '2020-12-05 15:00:02'),
+(497, NULL, NULL, 'MT_TITLE_INSTALLMENTON_BTN', 'Credit Card Installment via Midtrans', '2020-12-05 15:00:02', '2020-12-05 15:00:02'),
+(498, NULL, NULL, 'MT_BINS_INSTALLMENTON_BTN', NULL, '2020-12-05 15:00:02', '2020-12-05 15:00:02'),
+(499, NULL, NULL, 'MT_ENABLED_PROMO_BTN', '0', '2020-12-05 15:00:02', '2020-12-05 15:00:02'),
+(500, NULL, NULL, 'MT_TITLE_PROMO_BTN', 'Online Payment Promo via Midtrans', '2020-12-05 15:00:02', '2020-12-05 15:00:02'),
+(501, NULL, NULL, 'MT_METHOD_PROMO_BTN', NULL, '2020-12-05 15:00:02', '2020-12-05 15:00:02'),
+(502, NULL, NULL, 'MT_BINS_PROMO_BTN', NULL, '2020-12-05 15:00:02', '2020-12-05 15:00:02'),
+(503, NULL, NULL, 'MT_PROMO_CODE', NULL, '2020-12-05 15:00:02', '2020-12-05 15:00:02'),
+(504, NULL, NULL, 'MT_PROMO_CUSTOM_FIELDS', NULL, '2020-12-05 15:00:02', '2020-12-05 15:00:02'),
+(505, NULL, NULL, 'MT_MINAMOUNT_PROMO', '0', '2020-12-05 15:00:02', '2020-12-05 15:02:00'),
+(506, NULL, NULL, 'MT_ENABLED_EXPIRY', '0', '2020-12-05 15:00:02', '2020-12-05 15:00:02'),
+(507, NULL, NULL, 'MT_EXPIRY_DURATION', '24', '2020-12-05 15:00:02', '2020-12-05 15:00:02'),
+(508, NULL, NULL, 'MT_EXPIRY_UNIT', 'hours', '2020-12-05 15:00:02', '2020-12-05 15:00:02'),
+(509, NULL, NULL, 'MT_ENABLED_SAVECARD', '0', '2020-12-05 15:00:02', '2020-12-05 15:00:02'),
+(510, NULL, NULL, 'MT_ENABLED_FIELDS', '0', '2020-12-05 15:00:02', '2020-12-05 15:00:02'),
+(511, NULL, NULL, 'MT_FILEDS', NULL, '2020-12-05 15:00:02', '2020-12-05 15:00:02'),
+(512, NULL, NULL, 'MT_ENABLED_CUSTOMVA_BTN', '0', '2020-12-05 15:00:02', '2020-12-05 15:00:02'),
+(513, NULL, NULL, 'MT_LIST_CUSTOMVA', NULL, '2020-12-05 15:00:02', '2020-12-05 15:00:02'),
+(514, NULL, NULL, 'MT_ENABLED_IGNORE_DENY', '0', '2020-12-05 15:00:02', '2020-12-05 15:00:02'),
+(515, NULL, NULL, 'MT_ENABLED_REDIRECT', '0', '2020-12-05 15:00:02', '2020-12-05 15:00:02'),
+(516, NULL, NULL, 'MT_ENABLED_MAP_FINISH_URL', '0', '2020-12-05 15:00:02', '2020-12-05 15:00:02'),
+(517, NULL, NULL, 'MT_MERCHANT_ID', 'G955101995', '2020-12-05 15:02:00', '2020-12-05 15:02:00'),
+(518, NULL, NULL, 'MT_CLIENT_KEY', 'SB-Mid-client-kzF7mPpvkPXMnqIe', '2020-12-05 15:02:00', '2020-12-05 15:02:00'),
+(519, NULL, NULL, 'MT_SERVER_KEY', 'SB-Mid-server-Na7j1hP2tjUryumpDOv1yLUn', '2020-12-05 15:02:00', '2020-12-05 15:02:00'),
+(520, NULL, NULL, 'MT_KURS', NULL, '2020-12-05 15:02:00', '2020-12-05 15:02:00'),
+(521, NULL, NULL, 'MT_ENVIRONMENT', 'development', '2020-12-05 15:02:00', '2020-12-05 15:02:00');
 
 -- --------------------------------------------------------
 
@@ -3891,7 +3909,9 @@ INSERT INTO `ps_connections` (`id_connections`, `id_shop_group`, `id_shop`, `id_
 (1, 1, 1, 1, 1, 2130706433, '2020-12-05 14:02:37', 'http://www.prestashop.com'),
 (2, 1, 1, 3, 1, 0, '2020-12-05 14:04:53', ''),
 (3, 1, 1, 3, 2, 0, '2020-12-05 14:17:43', ''),
-(4, 1, 1, 3, 3, 0, '2020-12-05 14:20:33', '');
+(4, 1, 1, 3, 3, 0, '2020-12-05 14:20:33', ''),
+(5, 1, 1, 3, 1, 0, '2020-12-05 14:54:54', ''),
+(6, 1, 1, 3, 1, 0, '2020-12-05 14:56:42', '');
 
 -- --------------------------------------------------------
 
@@ -4968,7 +4988,8 @@ CREATE TABLE `ps_customer_session` (
 INSERT INTO `ps_customer_session` (`id_customer_session`, `id_customer`, `token`) VALUES
 (1, 3, '85525d47d82df7fd13fe029165513ceda0e98e8a'),
 (2, 3, 'b331ca1b1bdb7d35beb87345d64bf1ad8bc355a7'),
-(3, 3, '4a964e12b1fb9c141e8644c2f86a126a914bf9ae');
+(3, 3, '4a964e12b1fb9c141e8644c2f86a126a914bf9ae'),
+(4, 3, '3228952e2a7057ad1902071a5d66e4b2f3839506');
 
 -- --------------------------------------------------------
 
@@ -5015,6 +5036,13 @@ CREATE TABLE `ps_customization` (
   `quantity_returned` int(11) NOT NULL DEFAULT 0,
   `in_cart` tinyint(1) UNSIGNED NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `ps_customization`
+--
+
+INSERT INTO `ps_customization` (`id_customization`, `id_product_attribute`, `id_address_delivery`, `id_cart`, `id_product`, `quantity`, `quantity_refunded`, `quantity_returned`, `in_cart`) VALUES
+(1, 0, 6, 16, 19, 1, 0, 0, 1);
 
 -- --------------------------------------------------------
 
@@ -5073,6 +5101,13 @@ CREATE TABLE `ps_customized_data` (
   `price` decimal(20,6) NOT NULL DEFAULT 0.000000,
   `weight` decimal(20,6) NOT NULL DEFAULT 0.000000
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `ps_customized_data`
+--
+
+INSERT INTO `ps_customized_data` (`id_customization`, `type`, `index`, `value`, `id_module`, `price`, `weight`) VALUES
+(1, 1, 1, 'syarif', 0, '0.000000', '0.000000');
 
 -- --------------------------------------------------------
 
@@ -5345,7 +5380,7 @@ CREATE TABLE `ps_employee` (
 --
 
 INSERT INTO `ps_employee` (`id_employee`, `id_profile`, `id_lang`, `lastname`, `firstname`, `email`, `passwd`, `last_passwd_gen`, `stats_date_from`, `stats_date_to`, `stats_compare_from`, `stats_compare_to`, `stats_compare_option`, `preselect_date_range`, `bo_color`, `bo_theme`, `bo_css`, `default_tab`, `bo_width`, `bo_menu`, `active`, `optin`, `id_last_order`, `id_last_customer_message`, `id_last_customer`, `last_connection_date`, `reset_password_token`, `reset_password_validity`) VALUES
-(1, 1, 1, 'Hidayat', 'Syarif', '1606109@sttgarut.ac.id', '$2y$10$YsfF7tKbTAIHFE23WQz9YemiH/U3oHNHnFnRUrSbQlj/dDNa9PVpu', '2020-12-05 01:01:20', '2020-11-05', '2020-12-05', '0000-00-00', '0000-00-00', 1, NULL, NULL, 'default', 'theme.css', 1, 0, 1, 1, NULL, 0, 0, 0, '2020-12-05', NULL, '0000-00-00 00:00:00');
+(1, 1, 1, 'Hidayat', 'Syarif', '1606109@sttgarut.ac.id', '$2y$10$YsfF7tKbTAIHFE23WQz9YemiH/U3oHNHnFnRUrSbQlj/dDNa9PVpu', '2020-12-05 01:01:20', '2020-11-05', '2020-12-05', '0000-00-00', '0000-00-00', 1, NULL, NULL, 'default', 'theme.css', 1, 0, 1, 1, NULL, 10, 0, 0, '2020-12-05', NULL, '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -5366,7 +5401,8 @@ CREATE TABLE `ps_employee_session` (
 INSERT INTO `ps_employee_session` (`id_employee_session`, `id_employee`, `token`) VALUES
 (1, 1, 'fe63d3d61cece7e4a9fa3c03fb5604e1c66ea19b'),
 (2, 1, '1499a752f04b701799a26ad03881422a9634f734'),
-(3, 1, 'f42d632984beb1705365fc36c3ea29711acb5403');
+(4, 1, 'c2aa6c3660ac78d70526a52c509bca1238cc56ac'),
+(5, 1, 'd99fe6883345ec086692ef64d07878ca787be64b');
 
 -- --------------------------------------------------------
 
@@ -5701,7 +5737,7 @@ CREATE TABLE `ps_guest` (
 INSERT INTO `ps_guest` (`id_guest`, `id_operating_system`, `id_web_browser`, `id_customer`, `javascript`, `screen_resolution_x`, `screen_resolution_y`, `screen_color`, `sun_java`, `adobe_flash`, `adobe_director`, `apple_quicktime`, `real_player`, `windows_media`, `accept_language`, `mobile_theme`) VALUES
 (1, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', 0),
 (2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', 0),
-(3, 6, 11, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'en', 0);
+(3, 6, 11, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'id', 0);
 
 -- --------------------------------------------------------
 
@@ -6609,10 +6645,10 @@ INSERT INTO `ps_hook_module` (`id_module`, `id_shop`, `id_hook`, `position`) VAL
 (65, 1, 554, 1),
 (65, 1, 555, 1),
 (65, 1, 556, 1),
-(66, 1, 589, 1),
-(66, 1, 590, 1),
-(66, 1, 591, 1),
 (67, 1, 62, 1),
+(68, 1, 589, 1),
+(68, 1, 590, 1),
+(68, 1, 591, 1),
 (2, 1, 521, 2),
 (3, 1, 522, 2),
 (3, 1, 528, 2),
@@ -6656,8 +6692,8 @@ INSERT INTO `ps_hook_module` (`id_module`, `id_shop`, `id_hook`, `position`) VAL
 (58, 1, 65, 3),
 (61, 1, 114, 3),
 (61, 1, 538, 3),
-(66, 1, 541, 3),
-(66, 1, 542, 3),
+(68, 1, 541, 3),
+(68, 1, 542, 3),
 (5, 1, 522, 4),
 (6, 1, 528, 4),
 (19, 1, 13, 4),
@@ -6665,7 +6701,7 @@ INSERT INTO `ps_hook_module` (`id_module`, `id_shop`, `id_hook`, `position`) VAL
 (37, 1, 535, 4),
 (59, 1, 65, 4),
 (61, 1, 520, 4),
-(66, 1, 536, 4),
+(68, 1, 536, 4),
 (38, 1, 535, 5),
 (58, 1, 528, 5),
 (39, 1, 535, 6),
@@ -7250,25 +7286,25 @@ CREATE TABLE `ps_layered_price_index` (
 --
 
 INSERT INTO `ps_layered_price_index` (`id_product`, `id_currency`, `id_shop`, `price_min`, `price_max`, `id_country`) VALUES
-(1, 1, 1, '21.03200', '26.29000', 111),
-(2, 1, 1, '31.59200', '39.49000', 111),
-(3, 1, 1, '31.90000', '31.90000', 111),
-(4, 1, 1, '31.90000', '31.90000', 111),
-(5, 1, 1, '31.90000', '31.90000', 111),
-(6, 1, 1, '13.09000', '13.09000', 111),
-(7, 1, 1, '13.09000', '13.09000', 111),
-(8, 1, 1, '13.09000', '13.09000', 111),
-(9, 1, 1, '20.79000', '20.79000', 111),
-(10, 1, 1, '20.79000', '20.79000', 111),
-(11, 1, 1, '20.79000', '20.79000', 111),
-(12, 1, 1, '9.90000', '9.90000', 111),
-(13, 1, 1, '9.90000', '9.90000', 111),
-(14, 1, 1, '9.90000', '9.90000', 111),
-(15, 1, 1, '38.50000', '38.50000', 111),
-(16, 1, 1, '14.19000', '14.19000', 111),
-(17, 1, 1, '14.19000', '14.19000', 111),
-(18, 1, 1, '14.19000', '14.19000', 111),
-(19, 1, 1, '15.29000', '15.29000', 111),
+(1, 1, 1, '87120.00000', '108900.00000', 111),
+(2, 1, 1, '87120.00000', '108900.00000', 111),
+(3, 1, 1, '108900.00000', '108900.00000', 111),
+(4, 1, 1, '108900.00000', '108900.00000', 111),
+(5, 1, 1, '108900.00000', '108900.00000', 111),
+(6, 1, 1, '108900.00000', '108900.00000', 111),
+(7, 1, 1, '108900.00000', '108900.00000', 111),
+(8, 1, 1, '108900.00000', '108900.00000', 111),
+(9, 1, 1, '108900.00000', '108900.00000', 111),
+(10, 1, 1, '108900.00000', '108900.00000', 111),
+(11, 1, 1, '108900.00000', '108900.00000', 111),
+(12, 1, 1, '108900.00000', '108900.00000', 111),
+(13, 1, 1, '108900.00000', '108900.00000', 111),
+(14, 1, 1, '108900.00000', '108900.00000', 111),
+(15, 1, 1, '66000.00000', '66000.00000', 111),
+(16, 1, 1, '66000.00000', '66000.00000', 111),
+(17, 1, 1, '77000.00000', '77000.00000', 111),
+(18, 1, 1, '55000.00000', '55000.00000', 111),
+(19, 1, 1, '99000.00000', '99000.00000', 111),
 (20, 1, 1, '0.00000', '0.00000', 111);
 
 -- --------------------------------------------------------
@@ -7677,7 +7713,35 @@ INSERT INTO `ps_log` (`id_log`, `severity`, `error_code`, `message`, `object_typ
 (246, 1, 0, 'Frontcontroller::init - Cart cannot be loaded or an order has already been placed using this cart', 'Cart', 12, 0, '2020-12-05 14:21:24', '2020-12-05 14:21:24'),
 (247, 1, 0, 'Koneksi ke BackOffice dari ::1', '', 0, 1, '2020-12-05 14:21:44', '2020-12-05 14:21:44'),
 (248, 3, 0, 'Swift Error: Process could not be started [The system cannot find the path specified.\\r\\n]', '', 0, 0, '2020-12-05 14:27:37', '2020-12-05 14:27:37'),
-(249, 1, 0, 'Frontcontroller::init - Cart cannot be loaded or an order has already been placed using this cart', 'Cart', 13, 0, '2020-12-05 14:27:38', '2020-12-05 14:27:38');
+(249, 1, 0, 'Frontcontroller::init - Cart cannot be loaded or an order has already been placed using this cart', 'Cart', 13, 0, '2020-12-05 14:27:38', '2020-12-05 14:27:38'),
+(250, 1, 0, 'Koneksi ke BackOffice dari ::1', '', 0, 1, '2020-12-05 14:38:28', '2020-12-05 14:38:28'),
+(251, 1, 0, 'Koneksi ke BackOffice dari ::1', '', 0, 1, '2020-12-05 14:38:43', '2020-12-05 14:38:43'),
+(252, 3, 0, 'Swift Error: Process could not be started [The system cannot find the path specified.\\r\\n]', '', 0, 1, '2020-12-05 14:53:28', '2020-12-05 14:53:28'),
+(253, 3, 0, 'Swift Error: Process could not be started [The system cannot find the path specified.\\r\\n]', '', 0, 0, '2020-12-05 14:57:56', '2020-12-05 14:57:56'),
+(254, 1, 0, 'Frontcontroller::init - Cart cannot be loaded or an order has already been placed using this cart', 'Cart', 14, 0, '2020-12-05 14:57:56', '2020-12-05 14:57:56'),
+(255, 3, 0, 'Swift Error: Process could not be started [The system cannot find the path specified.\\r\\n]', '', 0, 0, '2020-12-05 15:02:52', '2020-12-05 15:02:52'),
+(256, 1, 0, 'Frontcontroller::init - Cart cannot be loaded or an order has already been placed using this cart', 'Cart', 15, 0, '2020-12-05 15:02:52', '2020-12-05 15:02:52'),
+(257, 1, 0, 'Product modification', 'Product', 19, 1, '2020-12-05 15:06:09', '2020-12-05 15:06:09'),
+(258, 3, 0, 'Swift Error: Process could not be started [The system cannot find the path specified.\\r\\n]', '', 0, 0, '2020-12-05 15:07:52', '2020-12-05 15:07:52'),
+(259, 1, 0, 'Frontcontroller::init - Cart cannot be loaded or an order has already been placed using this cart', 'Cart', 16, 0, '2020-12-05 15:07:52', '2020-12-05 15:07:52'),
+(260, 1, 0, 'Product modification', 'Product', 18, 1, '2020-12-05 15:08:49', '2020-12-05 15:08:49'),
+(261, 1, 0, 'Product modification', 'Product', 17, 1, '2020-12-05 15:09:16', '2020-12-05 15:09:16'),
+(262, 1, 0, 'Product modification', 'Product', 16, 1, '2020-12-05 15:09:31', '2020-12-05 15:09:31'),
+(263, 1, 0, 'Product modification', 'Product', 15, 1, '2020-12-05 15:10:13', '2020-12-05 15:10:13'),
+(264, 1, 0, 'Product modification', 'Product', 14, 1, '2020-12-05 15:10:30', '2020-12-05 15:10:30'),
+(265, 1, 0, 'Product modification', 'Product', 13, 1, '2020-12-05 15:10:46', '2020-12-05 15:10:46'),
+(266, 1, 0, 'Product modification', 'Product', 12, 1, '2020-12-05 15:11:00', '2020-12-05 15:11:00'),
+(267, 1, 0, 'Product modification', 'Product', 11, 1, '2020-12-05 15:11:10', '2020-12-05 15:11:10'),
+(268, 1, 0, 'Product modification', 'Product', 10, 1, '2020-12-05 15:11:20', '2020-12-05 15:11:20'),
+(269, 1, 0, 'Product modification', 'Product', 9, 1, '2020-12-05 15:11:35', '2020-12-05 15:11:35'),
+(270, 1, 0, 'Product modification', 'Product', 8, 1, '2020-12-05 15:12:09', '2020-12-05 15:12:09'),
+(271, 1, 0, 'Product modification', 'Product', 7, 1, '2020-12-05 15:12:10', '2020-12-05 15:12:10'),
+(272, 1, 0, 'Product modification', 'Product', 6, 1, '2020-12-05 15:12:15', '2020-12-05 15:12:15'),
+(273, 1, 0, 'Product modification', 'Product', 5, 1, '2020-12-05 15:12:19', '2020-12-05 15:12:19'),
+(274, 1, 0, 'Product modification', 'Product', 4, 1, '2020-12-05 15:12:23', '2020-12-05 15:12:23'),
+(275, 1, 0, 'Product modification', 'Product', 3, 1, '2020-12-05 15:12:27', '2020-12-05 15:12:27'),
+(276, 1, 0, 'Product modification', 'Product', 2, 1, '2020-12-05 15:12:29', '2020-12-05 15:12:29'),
+(277, 1, 0, 'Product modification', 'Product', 1, 1, '2020-12-05 15:12:33', '2020-12-05 15:12:33');
 
 -- --------------------------------------------------------
 
@@ -8002,8 +8066,8 @@ INSERT INTO `ps_module` (`id_module`, `name`, `active`, `version`) VALUES
 (63, 'ps_buybuttonlite', 1, '1.0.1'),
 (64, 'blockreassurance', 1, '5.0.0'),
 (65, 'ps_facetedsearch', 1, '3.6.0'),
-(66, 'midtranspay', 1, '2.8.1'),
-(67, 'mycarrier_rj', 1, '1.0');
+(67, 'mycarrier_rj', 1, '1.0'),
+(68, 'midtranspay', 1, '2.8.1');
 
 -- --------------------------------------------------------
 
@@ -8277,14 +8341,14 @@ INSERT INTO `ps_module_access` (`id_profile`, `id_authorization_role`) VALUES
 (1, 802),
 (1, 803),
 (1, 804),
-(1, 805),
-(1, 806),
-(1, 807),
-(1, 808),
 (1, 809),
 (1, 810),
 (1, 811),
-(1, 812);
+(1, 812),
+(1, 813),
+(1, 814),
+(1, 815),
+(1, 816);
 
 -- --------------------------------------------------------
 
@@ -8331,20 +8395,20 @@ INSERT INTO `ps_module_carrier` (`id_module`, `id_shop`, `id_reference`) VALUES
 (34, 1, 12),
 (34, 1, 13),
 (34, 1, 14),
-(66, 1, 1),
-(66, 1, 2),
-(66, 1, 3),
-(66, 1, 4),
-(66, 1, 5),
-(66, 1, 6),
-(66, 1, 7),
-(66, 1, 8),
-(66, 1, 9),
-(66, 1, 10),
-(66, 1, 11),
-(66, 1, 12),
-(66, 1, 13),
-(66, 1, 14);
+(68, 1, 1),
+(68, 1, 2),
+(68, 1, 3),
+(68, 1, 4),
+(68, 1, 5),
+(68, 1, 6),
+(68, 1, 7),
+(68, 1, 8),
+(68, 1, 9),
+(68, 1, 10),
+(68, 1, 11),
+(68, 1, 12),
+(68, 1, 13),
+(68, 1, 14);
 
 -- --------------------------------------------------------
 
@@ -8365,7 +8429,7 @@ CREATE TABLE `ps_module_country` (
 INSERT INTO `ps_module_country` (`id_module`, `id_shop`, `id_country`) VALUES
 (13, 1, 111),
 (34, 1, 111),
-(66, 1, 111);
+(68, 1, 111);
 
 -- --------------------------------------------------------
 
@@ -8386,7 +8450,7 @@ CREATE TABLE `ps_module_currency` (
 INSERT INTO `ps_module_currency` (`id_module`, `id_shop`, `id_currency`) VALUES
 (13, 1, 1),
 (34, 1, 1),
-(66, 1, 1);
+(68, 1, 1);
 
 -- --------------------------------------------------------
 
@@ -8597,12 +8661,12 @@ INSERT INTO `ps_module_group` (`id_module`, `id_shop`, `id_group`) VALUES
 (65, 1, 1),
 (65, 1, 2),
 (65, 1, 3),
-(66, 1, 1),
-(66, 1, 2),
-(66, 1, 3),
 (67, 1, 1),
 (67, 1, 2),
-(67, 1, 3);
+(67, 1, 3),
+(68, 1, 1),
+(68, 1, 2),
+(68, 1, 3);
 
 -- --------------------------------------------------------
 
@@ -8624,7 +8688,8 @@ CREATE TABLE `ps_module_history` (
 
 INSERT INTO `ps_module_history` (`id`, `id_employee`, `id_module`, `date_add`, `date_upd`) VALUES
 (1, 1, 66, '2020-12-05 14:07:38', '2020-12-05 14:21:50'),
-(2, 1, 67, '2020-12-05 14:12:35', '2020-12-05 14:12:35');
+(2, 1, 67, '2020-12-05 14:12:35', '2020-12-05 14:12:35'),
+(3, 1, 68, '2020-12-05 15:00:40', '2020-12-05 15:00:54');
 
 -- --------------------------------------------------------
 
@@ -8721,8 +8786,8 @@ INSERT INTO `ps_module_shop` (`id_module`, `id_shop`, `enable_device`) VALUES
 (63, 1, 7),
 (64, 1, 7),
 (65, 1, 7),
-(66, 1, 7),
-(67, 1, 7);
+(67, 1, 7),
+(68, 1, 7);
 
 -- --------------------------------------------------------
 
@@ -8839,7 +8904,10 @@ INSERT INTO `ps_orders` (`id_order`, `reference`, `id_shop_group`, `id_shop`, `i
 (7, 'PFDYOQSAG', 1, 1, 11, 1, 3, 9, 1, 6, 6, 14, '53cd9d6abf5105748f86912f1dfbe1a7', 'Midtrans Pay', '1.000000', 'midtranspay', 0, 0, '', 0, '', '0.000000', '0.000000', '0.000000', '6031.590000', '6031.590000', '6028.720000', '0.000000', '28.720000', '31.590000', '6000.000000', '6000.000000', '6000.000000', '0.000', '0.000000', '0.000000', '0.000000', 2, 2, 0, 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', 0, '2020-12-05 14:18:29', '2020-12-05 14:18:29'),
 (8, 'GTJOEIVGK', 1, 1, 11, 1, 3, 10, 1, 6, 6, 14, '53cd9d6abf5105748f86912f1dfbe1a7', 'Midtrans Pay', '1.000000', 'midtranspay', 0, 0, '', 0, '', '0.000000', '0.000000', '0.000000', '6031.590000', '6031.590000', '6028.720000', '0.000000', '28.720000', '31.590000', '6000.000000', '6000.000000', '6000.000000', '0.000', '0.000000', '0.000000', '0.000000', 2, 2, 0, 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', 0, '2020-12-05 14:20:10', '2020-12-05 14:20:10'),
 (9, 'RNNTMQUAL', 1, 1, 13, 1, 3, 12, 1, 6, 6, 14, '53cd9d6abf5105748f86912f1dfbe1a7', 'Midtrans Pay', '1.000000', 'midtranspay', 0, 0, '', 0, '', '0.000000', '0.000000', '0.000000', '7031.590000', '7031.590000', '7028.720000', '0.000000', '28.720000', '31.590000', '7000.000000', '7000.000000', '7000.000000', '0.000', '0.000000', '0.000000', '0.000000', 2, 2, 0, 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', 0, '2020-12-05 14:21:24', '2020-12-05 14:21:24'),
-(10, 'BAVUAZWXH', 1, 1, 13, 1, 3, 13, 1, 6, 6, 14, '53cd9d6abf5105748f86912f1dfbe1a7', 'Midtrans Pay', '1.000000', 'midtranspay', 0, 0, '', 0, '', '0.000000', '0.000000', '0.000000', '7031.590000', '7031.590000', '7028.720000', '0.000000', '28.720000', '31.590000', '7000.000000', '7000.000000', '7000.000000', '0.000', '0.000000', '0.000000', '0.000000', 2, 2, 0, 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', 0, '2020-12-05 14:27:37', '2020-12-05 14:27:37');
+(10, 'BAVUAZWXH', 1, 1, 13, 1, 3, 13, 1, 6, 6, 4, '53cd9d6abf5105748f86912f1dfbe1a7', 'Midtrans Pay', '1.000000', 'midtranspay', 0, 0, '', 0, '', '0.000000', '0.000000', '0.000000', '7031.590000', '7031.590000', '7028.720000', '7031.590000', '28.720000', '31.590000', '7000.000000', '7000.000000', '7000.000000', '0.000', '0.000000', '0.000000', '0.000000', 2, 2, 1, 1, '2020-12-05 14:53:27', '2020-12-05 14:53:28', 1, '2020-12-05 14:27:37', '2020-12-05 14:53:28'),
+(11, 'LMQQRSDUK', 1, 1, 9, 1, 3, 14, 1, 6, 6, 14, '53cd9d6abf5105748f86912f1dfbe1a7', 'Midtrans Pay', '1.000000', 'midtranspay', 0, 0, '', 0, '', '0.000000', '0.000000', '0.000000', '9031.590000', '9031.590000', '9028.720000', '0.000000', '28.720000', '31.590000', '9000.000000', '9000.000000', '9000.000000', '0.000', '0.000000', '0.000000', '0.000000', 2, 2, 0, 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', 0, '2020-12-05 14:57:56', '2020-12-05 14:57:56'),
+(12, 'LMSHXXBND', 1, 1, 9, 1, 3, 15, 1, 6, 6, 15, '53cd9d6abf5105748f86912f1dfbe1a7', 'Midtrans Pay', '1.000000', 'midtranspay', 0, 0, '', 0, '', '0.000000', '0.000000', '0.000000', '9031.590000', '9031.590000', '9028.720000', '0.000000', '28.720000', '31.590000', '9000.000000', '9000.000000', '9000.000000', '0.000', '0.000000', '0.000000', '0.000000', 2, 2, 0, 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', 0, '2020-12-05 15:02:52', '2020-12-05 15:02:52'),
+(13, 'AKPGCKHLW', 1, 1, 11, 1, 3, 16, 1, 6, 6, 15, '53cd9d6abf5105748f86912f1dfbe1a7', 'Midtrans Pay', '1.000000', 'midtranspay', 0, 0, '', 0, '', '0.000000', '0.000000', '0.000000', '105000.000000', '105000.000000', '96000.000000', '0.000000', '90000.000000', '99000.000000', '6000.000000', '6000.000000', '6000.000000', '0.000', '0.000000', '0.000000', '0.000000', 2, 2, 0, 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', 0, '2020-12-05 15:07:52', '2020-12-05 15:07:52');
 
 -- --------------------------------------------------------
 
@@ -8873,7 +8941,10 @@ INSERT INTO `ps_order_carrier` (`id_order_carrier`, `id_order`, `id_carrier`, `i
 (7, 7, 11, 0, '0.300000', '6000.000000', '6000.000000', '', '2020-12-05 14:18:29'),
 (8, 8, 11, 0, '0.300000', '6000.000000', '6000.000000', '', '2020-12-05 14:20:10'),
 (9, 9, 13, 0, '0.300000', '7000.000000', '7000.000000', '', '2020-12-05 14:21:24'),
-(10, 10, 13, 0, '0.300000', '7000.000000', '7000.000000', '', '2020-12-05 14:27:37');
+(10, 10, 13, 1, '0.300000', '7000.000000', '7000.000000', '', '2020-12-05 14:27:37'),
+(11, 11, 9, 0, '0.300000', '9000.000000', '9000.000000', '', '2020-12-05 14:57:56'),
+(12, 12, 9, 0, '0.300000', '9000.000000', '9000.000000', '', '2020-12-05 15:02:52'),
+(13, 13, 11, 0, '0.300000', '6000.000000', '6000.000000', '', '2020-12-05 15:07:52');
 
 -- --------------------------------------------------------
 
@@ -8967,7 +9038,10 @@ INSERT INTO `ps_order_detail` (`id_order_detail`, `id_order`, `id_order_invoice`
 (9, 7, 0, 0, 1, 2, 9, 0, 'Hummingbird printed sweater - Ukuran : S', 1, 1, 0, 0, 0, '35.900000', '20.00', '0.000000', '0.000000', '0.000000', '0.00', '32.690000', '', '', '', '', 'demo_3', '', '0.300000', 1, 0, '', '0.000', '0.000000', '0.000', 0, '', 0, '0000-00-00 00:00:00', '31.590000', '28.720000', '31.592000', '28.720000', '0.000000', '0.000000', '0.000000', '35.900000', '0.000000', '0.000000', '0.000000'),
 (10, 8, 0, 0, 1, 2, 9, 0, 'Hummingbird printed sweater - Ukuran : S', 1, 1, 0, 0, 0, '35.900000', '20.00', '0.000000', '0.000000', '0.000000', '0.00', '32.690000', '', '', '', '', 'demo_3', '', '0.300000', 1, 0, '', '0.000', '0.000000', '0.000', 0, '', 0, '0000-00-00 00:00:00', '31.590000', '28.720000', '31.592000', '28.720000', '0.000000', '0.000000', '0.000000', '35.900000', '0.000000', '0.000000', '0.000000'),
 (11, 9, 0, 0, 1, 2, 9, 0, 'Hummingbird printed sweater - Ukuran : S', 1, 1, 0, 0, 0, '35.900000', '20.00', '0.000000', '0.000000', '0.000000', '0.00', '32.690000', '', '', '', '', 'demo_3', '', '0.300000', 1, 0, '', '0.000', '0.000000', '0.000', 0, '', 0, '0000-00-00 00:00:00', '31.590000', '28.720000', '31.592000', '28.720000', '0.000000', '0.000000', '0.000000', '35.900000', '0.000000', '0.000000', '0.000000'),
-(12, 10, 0, 0, 1, 2, 9, 0, 'Hummingbird printed sweater - Ukuran : S', 1, 1, 0, 0, 0, '35.900000', '20.00', '0.000000', '0.000000', '0.000000', '0.00', '32.690000', '', '', '', '', 'demo_3', '', '0.300000', 1, 0, '', '0.000', '0.000000', '0.000', 0, '', 0, '0000-00-00 00:00:00', '31.590000', '28.720000', '31.592000', '28.720000', '0.000000', '0.000000', '0.000000', '35.900000', '0.000000', '0.000000', '0.000000');
+(12, 10, 1, 0, 1, 2, 9, 0, 'Hummingbird printed sweater - Ukuran : S', 1, 1, 0, 0, 0, '35.900000', '20.00', '0.000000', '0.000000', '0.000000', '0.00', '32.690000', '', '', '', '', 'demo_3', '', '0.300000', 1, 0, '', '0.000', '0.000000', '0.000', 0, '', 0, '0000-00-00 00:00:00', '31.590000', '28.720000', '31.592000', '28.720000', '0.000000', '0.000000', '0.000000', '35.900000', '0.000000', '0.000000', '0.000000'),
+(13, 11, 0, 0, 1, 2, 9, 0, 'Hummingbird printed sweater - Ukuran : S', 1, 1, 0, 0, 0, '35.900000', '20.00', '0.000000', '0.000000', '0.000000', '0.00', '32.690000', '', '', '', '', 'demo_3', '', '0.300000', 1, 0, '', '0.000', '0.000000', '0.000', 0, '', 0, '0000-00-00 00:00:00', '31.590000', '28.720000', '31.592000', '28.720000', '0.000000', '0.000000', '0.000000', '35.900000', '0.000000', '0.000000', '0.000000'),
+(14, 12, 0, 0, 1, 2, 9, 0, 'Hummingbird printed sweater - Ukuran : S', 1, 1, 0, 0, 0, '35.900000', '20.00', '0.000000', '0.000000', '0.000000', '0.00', '32.690000', '', '', '', '', 'demo_3', '', '0.300000', 1, 0, '', '0.000', '0.000000', '0.000', 0, '', 0, '0000-00-00 00:00:00', '31.590000', '28.720000', '31.592000', '28.720000', '0.000000', '0.000000', '0.000000', '35.900000', '0.000000', '0.000000', '0.000000'),
+(15, 13, 0, 0, 1, 19, 0, 1, 'Customizable mug', 1, 1, 0, 0, 0, '90000.000000', '0.00', '0.000000', '0.000000', '0.000000', '0.00', '0.000000', '', '', '', '', 'demo_14', '', '0.300000', 1, 0, '', '0.000', '0.000000', '0.000', 0, '', 0, '0000-00-00 00:00:00', '99000.000000', '90000.000000', '99000.000000', '90000.000000', '0.000000', '0.000000', '0.000000', '90000.000000', '0.000000', '0.000000', '0.000000');
 
 -- --------------------------------------------------------
 
@@ -8991,7 +9065,10 @@ INSERT INTO `ps_order_detail_tax` (`id_order_detail`, `id_tax`, `unit_amount`, `
 (9, 1, '2.872000', '2.870000'),
 (10, 1, '2.872000', '2.870000'),
 (11, 1, '2.872000', '2.870000'),
-(12, 1, '2.872000', '2.870000');
+(12, 1, '2.872000', '2.870000'),
+(13, 1, '2.872000', '2.870000'),
+(14, 1, '2.872000', '2.870000'),
+(15, 1, '9000.000000', '9000.000000');
 
 -- --------------------------------------------------------
 
@@ -9023,7 +9100,11 @@ INSERT INTO `ps_order_history` (`id_order_history`, `id_employee`, `id_order`, `
 (9, 0, 7, 14, '2020-12-05 14:18:29'),
 (10, 0, 8, 14, '2020-12-05 14:20:10'),
 (11, 0, 9, 14, '2020-12-05 14:21:24'),
-(12, 0, 10, 14, '2020-12-05 14:27:37');
+(12, 0, 10, 14, '2020-12-05 14:27:37'),
+(13, 1, 10, 4, '2020-12-05 14:53:28'),
+(14, 0, 11, 14, '2020-12-05 14:57:56'),
+(15, 0, 12, 15, '2020-12-05 15:02:52'),
+(16, 0, 13, 15, '2020-12-05 15:07:52');
 
 -- --------------------------------------------------------
 
@@ -9053,6 +9134,13 @@ CREATE TABLE `ps_order_invoice` (
   `date_add` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `ps_order_invoice`
+--
+
+INSERT INTO `ps_order_invoice` (`id_order_invoice`, `id_order`, `number`, `delivery_number`, `delivery_date`, `total_discount_tax_excl`, `total_discount_tax_incl`, `total_paid_tax_excl`, `total_paid_tax_incl`, `total_products`, `total_products_wt`, `total_shipping_tax_excl`, `total_shipping_tax_incl`, `shipping_tax_computation_method`, `total_wrapping_tax_excl`, `total_wrapping_tax_incl`, `shop_address`, `note`, `date_add`) VALUES
+(1, 10, 1, 1, '2020-12-05 14:53:28', '0.000000', '0.000000', '7028.720000', '7031.590000', '28.720000', '31.590000', '7000.000000', '7000.000000', 0, '0.000000', '0.000000', 'getideashop', '', '2020-12-05 14:53:27');
+
 -- --------------------------------------------------------
 
 --
@@ -9064,6 +9152,13 @@ CREATE TABLE `ps_order_invoice_payment` (
   `id_order_payment` int(11) UNSIGNED NOT NULL,
   `id_order` int(11) UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `ps_order_invoice_payment`
+--
+
+INSERT INTO `ps_order_invoice_payment` (`id_order_invoice`, `id_order_payment`, `id_order`) VALUES
+(1, 1, 10);
 
 -- --------------------------------------------------------
 
@@ -9136,6 +9231,13 @@ CREATE TABLE `ps_order_payment` (
   `card_holder` varchar(254) DEFAULT NULL,
   `date_add` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `ps_order_payment`
+--
+
+INSERT INTO `ps_order_payment` (`id_order_payment`, `order_reference`, `id_currency`, `amount`, `payment_method`, `conversion_rate`, `transaction_id`, `card_number`, `card_brand`, `card_expiration`, `card_holder`, `date_add`) VALUES
+(1, 'BAVUAZWXH', 1, '7031.590000', 'Midtrans Pay', '1.000000', '', '', '', '', '', '2020-12-05 14:53:28');
 
 -- --------------------------------------------------------
 
@@ -9307,7 +9409,7 @@ INSERT INTO `ps_order_state` (`id_order_state`, `invoice`, `send_email`, `module
 (11, 1, 1, '', '#3498D8', 1, 0, 1, 0, 0, 1, 0, 0, 0),
 (12, 0, 1, '', '#34209E', 1, 0, 0, 0, 0, 0, 0, 0, 0),
 (13, 0, 0, 'ps_cashondelivery', '#34209E', 1, 0, 0, 0, 0, 0, 0, 0, 0),
-(14, 0, 0, 'midtranspay', 'RoyalBlue', 0, 0, 0, 0, 0, 0, 0, 0, 0);
+(15, 0, 0, 'midtranspay', 'RoyalBlue', 0, 0, 0, 0, 0, 0, 0, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -9340,7 +9442,7 @@ INSERT INTO `ps_order_state_lang` (`id_order_state`, `id_lang`, `name`, `templat
 (11, 1, 'Pembayaran diterima', 'payment'),
 (12, 1, 'Sedang dipesan', 'outofstock'),
 (13, 1, 'Awaiting cod validation', 'cashondelivery'),
-(14, 1, 'Awaiting Midtrans payment', '');
+(15, 1, 'Awaiting Midtrans payment', '');
 
 -- --------------------------------------------------------
 
@@ -9501,25 +9603,25 @@ CREATE TABLE `ps_product` (
 --
 
 INSERT INTO `ps_product` (`id_product`, `id_supplier`, `id_manufacturer`, `id_category_default`, `id_shop_default`, `id_tax_rules_group`, `on_sale`, `online_only`, `ean13`, `isbn`, `upc`, `mpn`, `ecotax`, `quantity`, `minimal_quantity`, `low_stock_threshold`, `low_stock_alert`, `price`, `wholesale_price`, `unity`, `unit_price_ratio`, `additional_shipping_cost`, `reference`, `supplier_reference`, `location`, `width`, `height`, `depth`, `weight`, `out_of_stock`, `additional_delivery_times`, `quantity_discount`, `customizable`, `uploadable_files`, `text_fields`, `active`, `redirect_type`, `id_type_redirected`, `available_for_order`, `available_date`, `show_condition`, `condition`, `show_price`, `indexed`, `visibility`, `cache_is_pack`, `cache_has_attachments`, `is_virtual`, `cache_default_attribute`, `date_add`, `date_upd`, `advanced_stock_management`, `pack_stock_type`, `state`) VALUES
-(1, 0, 1, 4, 1, 1, 0, 0, '', '', '', '', '0.000000', 0, 1, NULL, 0, '23.900000', '0.000000', '', '0.000000', '0.000000', 'demo_1', '', '', '0.000000', '0.000000', '0.000000', '0.300000', 2, 1, 0, 0, 0, 0, 1, '301-category', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, 0, 1, '2020-12-05 14:02:37', '2020-12-05 14:02:37', 0, 3, 1),
-(2, 0, 1, 5, 1, 1, 0, 0, '', '', '', '', '0.000000', 0, 1, NULL, 0, '35.900000', '0.000000', '', '0.000000', '0.000000', 'demo_3', '', '', '0.000000', '0.000000', '0.000000', '0.300000', 2, 1, 0, 0, 0, 0, 1, '404', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, 0, 9, '2020-12-05 14:02:37', '2020-12-05 14:02:37', 0, 3, 1),
-(3, 0, 2, 9, 1, 1, 0, 0, '', '', '', '', '0.000000', 0, 1, NULL, 0, '29.000000', '0.000000', '', '0.000000', '0.000000', 'demo_6', '', '', '0.000000', '0.000000', '0.000000', '0.300000', 2, 1, 0, 0, 0, 0, 1, '301-category', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, 0, 13, '2020-12-05 14:02:37', '2020-12-05 14:02:37', 0, 3, 1),
-(4, 0, 2, 9, 1, 1, 0, 0, '', '', '', '', '0.000000', 0, 1, NULL, 0, '29.000000', '0.000000', '', '0.000000', '0.000000', 'demo_5', '', '', '0.000000', '0.000000', '0.000000', '0.300000', 2, 1, 0, 0, 0, 0, 1, '404', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, 0, 16, '2020-12-05 14:02:37', '2020-12-05 14:02:37', 0, 3, 1),
-(5, 0, 2, 9, 1, 1, 0, 0, '', '', '', '', '0.000000', 0, 1, NULL, 0, '29.000000', '0.000000', '', '0.000000', '0.000000', 'demo_7', '', '', '0.000000', '0.000000', '0.000000', '0.300000', 2, 1, 0, 0, 0, 0, 1, '301-category', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, 0, 19, '2020-12-05 14:02:37', '2020-12-05 14:02:37', 0, 3, 1),
-(6, 0, 1, 8, 1, 1, 0, 0, '', '', '', '', '0.000000', 0, 1, NULL, 0, '11.900000', '0.000000', '', '0.000000', '0.000000', 'demo_11', '', '', '0.000000', '0.000000', '0.000000', '0.300000', 2, 1, 0, 0, 0, 0, 1, '301-category', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, 0, 0, '2020-12-05 14:02:37', '2020-12-05 14:02:37', 0, 3, 1),
-(7, 0, 1, 8, 1, 1, 0, 0, '', '', '', '', '0.000000', 0, 1, NULL, 0, '11.900000', '0.000000', '', '0.000000', '0.000000', 'demo_12', '', '', '0.000000', '0.000000', '0.000000', '0.300000', 2, 1, 0, 0, 0, 0, 1, '301-category', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, 0, 0, '2020-12-05 14:02:37', '2020-12-05 14:02:37', 0, 3, 1),
-(8, 0, 1, 8, 1, 1, 0, 0, '', '', '', '', '0.000000', 0, 1, NULL, 0, '11.900000', '0.000000', '', '0.000000', '0.000000', 'demo_13', '', '', '0.000000', '0.000000', '0.000000', '0.300000', 2, 1, 0, 0, 0, 0, 1, '404', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, 0, 0, '2020-12-05 14:02:37', '2020-12-05 14:02:37', 0, 3, 1),
-(9, 0, 1, 8, 1, 1, 0, 0, '', '', '', '', '0.000000', 0, 1, NULL, 0, '18.900000', '0.000000', '', '0.000000', '0.000000', 'demo_15', '', '', '0.000000', '0.000000', '0.000000', '0.300000', 2, 1, 0, 0, 0, 0, 1, '301-category', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, 0, 22, '2020-12-05 14:02:37', '2020-12-05 14:02:37', 0, 3, 1),
-(10, 0, 1, 8, 1, 1, 0, 0, '', '', '', '', '0.000000', 0, 1, NULL, 0, '18.900000', '0.000000', '', '0.000000', '0.000000', 'demo_16', '', '', '0.000000', '0.000000', '0.000000', '0.300000', 2, 1, 0, 0, 0, 0, 1, '301-category', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, 0, 24, '2020-12-05 14:02:37', '2020-12-05 14:02:37', 0, 3, 1),
-(11, 0, 1, 8, 1, 1, 0, 0, '', '', '', '', '0.000000', 0, 1, NULL, 0, '18.900000', '0.000000', '', '0.000000', '0.000000', 'demo_17', '', '', '0.000000', '0.000000', '0.000000', '0.300000', 2, 1, 0, 0, 0, 0, 1, '301-category', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, 0, 26, '2020-12-05 14:02:37', '2020-12-05 14:02:37', 0, 3, 1),
-(12, 0, 2, 9, 1, 1, 0, 0, '', '', '', '', '0.000000', 0, 1, NULL, 0, '9.000000', '0.000000', '', '0.000000', '0.000000', 'demo_18', '', '', '0.000000', '0.000000', '0.000000', '0.300000', 2, 1, 0, 0, 0, 0, 1, '301-category', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, 1, 0, '2020-12-05 14:02:37', '2020-12-05 14:02:37', 0, 3, 1),
-(13, 0, 2, 9, 1, 1, 0, 0, '', '', '', '', '0.000000', 0, 1, NULL, 0, '9.000000', '0.000000', '', '0.000000', '0.000000', 'demo_19', '', '', '0.000000', '0.000000', '0.000000', '0.300000', 2, 1, 0, 0, 0, 0, 1, '301-category', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, 1, 0, '2020-12-05 14:02:37', '2020-12-05 14:02:37', 0, 3, 1),
-(14, 0, 2, 9, 1, 1, 0, 0, '', '', '', '', '0.000000', 0, 1, NULL, 0, '9.000000', '0.000000', '', '0.000000', '0.000000', 'demo_20', '', '', '0.000000', '0.000000', '0.000000', '0.300000', 2, 1, 0, 0, 0, 0, 1, '301-category', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, 1, 0, '2020-12-05 14:02:37', '2020-12-05 14:02:37', 0, 3, 1),
-(15, 0, 0, 8, 1, 1, 0, 0, '', '', '', '', '0.000000', 0, 1, NULL, 0, '35.000000', '0.000000', '', '0.000000', '0.000000', 'demo_21', '', '', '0.000000', '0.000000', '0.000000', '0.300000', 2, 1, 0, 0, 0, 0, 1, '301-category', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 1, 0, 0, 0, '2020-12-05 14:02:37', '2020-12-05 14:02:37', 0, 3, 1),
-(16, 0, 2, 7, 1, 1, 0, 0, '', '', '', '', '0.000000', 0, 1, NULL, 0, '12.900000', '0.000000', '', '0.000000', '0.000000', 'demo_8', '', '', '0.000000', '0.000000', '0.000000', '0.300000', 2, 1, 0, 0, 0, 0, 1, '301-category', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, 0, 28, '2020-12-05 14:02:37', '2020-12-05 14:02:37', 0, 3, 1),
-(17, 0, 2, 7, 1, 1, 0, 0, '', '', '', '', '0.000000', 0, 1, NULL, 0, '12.900000', '0.000000', '', '0.000000', '0.000000', 'demo_9', '', '', '0.000000', '0.000000', '0.000000', '0.300000', 2, 1, 0, 0, 0, 0, 1, '301-category', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, 0, 32, '2020-12-05 14:02:37', '2020-12-05 14:02:37', 0, 3, 1),
-(18, 0, 2, 7, 1, 1, 0, 0, '', '', '', '', '0.000000', 0, 1, NULL, 0, '12.900000', '0.000000', '', '0.000000', '0.000000', 'demo_10', '', '', '0.000000', '0.000000', '0.000000', '0.300000', 2, 1, 0, 0, 0, 0, 1, '301-category', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, 0, 36, '2020-12-05 14:02:37', '2020-12-05 14:02:37', 0, 3, 1),
-(19, 0, 1, 8, 1, 1, 0, 0, '', '', '', '', '0.000000', 0, 1, NULL, 0, '13.900000', '0.000000', '', '0.000000', '0.000000', 'demo_14', '', '', '0.000000', '0.000000', '0.000000', '0.300000', 2, 1, 0, 1, 0, 1, 1, '301-category', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, 0, 0, '2020-12-05 14:02:37', '2020-12-05 14:02:37', 0, 3, 1),
+(1, 0, 1, 4, 1, 1, 0, 0, '', '', '', '', '0.000000', 0, 1, NULL, 0, '99000.000000', '0.000000', '', '0.000000', '0.000000', 'demo_1', '', '', '0.000000', '0.000000', '0.000000', '0.300000', 2, 1, 0, 0, 0, 0, 1, '301-category', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, 0, 1, '2020-12-05 14:02:37', '2020-12-05 15:12:33', 0, 3, 1),
+(2, 0, 1, 5, 1, 1, 0, 0, '', '', '', '', '0.000000', 0, 1, NULL, 0, '99000.000000', '0.000000', '', '0.000000', '0.000000', 'demo_3', '', '', '0.000000', '0.000000', '0.000000', '0.300000', 2, 1, 0, 0, 0, 0, 1, '404', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, 0, 9, '2020-12-05 14:02:37', '2020-12-05 15:12:29', 0, 3, 1),
+(3, 0, 2, 9, 1, 1, 0, 0, '', '', '', '', '0.000000', 0, 1, NULL, 0, '99000.000000', '0.000000', '', '0.000000', '0.000000', 'demo_6', '', '', '0.000000', '0.000000', '0.000000', '0.300000', 2, 1, 0, 0, 0, 0, 1, '301-category', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, 0, 13, '2020-12-05 14:02:37', '2020-12-05 15:12:26', 0, 3, 1),
+(4, 0, 2, 9, 1, 1, 0, 0, '', '', '', '', '0.000000', 0, 1, NULL, 0, '99000.000000', '0.000000', '', '0.000000', '0.000000', 'demo_5', '', '', '0.000000', '0.000000', '0.000000', '0.300000', 2, 1, 0, 0, 0, 0, 1, '404', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, 0, 16, '2020-12-05 14:02:37', '2020-12-05 15:12:22', 0, 3, 1),
+(5, 0, 2, 9, 1, 1, 0, 0, '', '', '', '', '0.000000', 0, 1, NULL, 0, '99000.000000', '0.000000', '', '0.000000', '0.000000', 'demo_7', '', '', '0.000000', '0.000000', '0.000000', '0.300000', 2, 1, 0, 0, 0, 0, 1, '301-category', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, 0, 19, '2020-12-05 14:02:37', '2020-12-05 15:12:19', 0, 3, 1),
+(6, 0, 1, 8, 1, 1, 0, 0, '', '', '', '', '0.000000', 0, 1, NULL, 0, '99000.000000', '0.000000', '', '0.000000', '0.000000', 'demo_11', '', '', '0.000000', '0.000000', '0.000000', '0.300000', 2, 1, 0, 0, 0, 0, 1, '301-category', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, 0, 0, '2020-12-05 14:02:37', '2020-12-05 15:12:14', 0, 3, 1),
+(7, 0, 1, 8, 1, 1, 0, 0, '', '', '', '', '0.000000', 0, 1, NULL, 0, '99000.000000', '0.000000', '', '0.000000', '0.000000', 'demo_12', '', '', '0.000000', '0.000000', '0.000000', '0.300000', 2, 1, 0, 0, 0, 0, 1, '301-category', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, 0, 0, '2020-12-05 14:02:37', '2020-12-05 15:12:10', 0, 3, 1),
+(8, 0, 1, 8, 1, 1, 0, 0, '', '', '', '', '0.000000', 0, 1, NULL, 0, '99000.000000', '0.000000', '', '0.000000', '0.000000', 'demo_13', '', '', '0.000000', '0.000000', '0.000000', '0.300000', 2, 1, 0, 0, 0, 0, 1, '404', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, 0, 0, '2020-12-05 14:02:37', '2020-12-05 15:12:08', 0, 3, 1),
+(9, 0, 1, 8, 1, 1, 0, 0, '', '', '', '', '0.000000', 0, 1, NULL, 0, '99000.000000', '0.000000', '', '0.000000', '0.000000', 'demo_15', '', '', '0.000000', '0.000000', '0.000000', '0.300000', 2, 1, 0, 0, 0, 0, 1, '301-category', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, 0, 22, '2020-12-05 14:02:37', '2020-12-05 15:11:34', 0, 3, 1),
+(10, 0, 1, 8, 1, 1, 0, 0, '', '', '', '', '0.000000', 0, 1, NULL, 0, '99000.000000', '0.000000', '', '0.000000', '0.000000', 'demo_16', '', '', '0.000000', '0.000000', '0.000000', '0.300000', 2, 1, 0, 0, 0, 0, 1, '301-category', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, 0, 24, '2020-12-05 14:02:37', '2020-12-05 15:11:20', 0, 3, 1),
+(11, 0, 1, 8, 1, 1, 0, 0, '', '', '', '', '0.000000', 0, 1, NULL, 0, '99000.000000', '0.000000', '', '0.000000', '0.000000', 'demo_17', '', '', '0.000000', '0.000000', '0.000000', '0.300000', 2, 1, 0, 0, 0, 0, 1, '301-category', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, 0, 26, '2020-12-05 14:02:37', '2020-12-05 15:11:10', 0, 3, 1),
+(12, 0, 2, 9, 1, 1, 0, 0, '', '', '', '', '0.000000', 0, 1, NULL, 0, '99000.000000', '0.000000', '', '0.000000', '0.000000', 'demo_18', '', '', '0.000000', '0.000000', '0.000000', '0.300000', 2, 1, 0, 0, 0, 0, 1, '301-category', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, 1, 0, '2020-12-05 14:02:37', '2020-12-05 15:11:00', 0, 3, 1),
+(13, 0, 2, 9, 1, 1, 0, 0, '', '', '', '', '0.000000', 0, 1, NULL, 0, '99000.000000', '0.000000', '', '0.000000', '0.000000', 'demo_19', '', '', '0.000000', '0.000000', '0.000000', '0.300000', 2, 1, 0, 0, 0, 0, 1, '301-category', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, 1, 0, '2020-12-05 14:02:37', '2020-12-05 15:10:46', 0, 3, 1),
+(14, 0, 2, 9, 1, 1, 0, 0, '', '', '', '', '0.000000', 0, 1, NULL, 0, '99000.000000', '0.000000', '', '0.000000', '0.000000', 'demo_20', '', '', '0.000000', '0.000000', '0.000000', '0.300000', 2, 1, 0, 0, 0, 0, 1, '301-category', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, 1, 0, '2020-12-05 14:02:37', '2020-12-05 15:10:30', 0, 3, 1),
+(15, 0, 0, 8, 1, 1, 0, 0, '', '', '', '', '0.000000', 0, 1, NULL, 0, '60000.000000', '0.000000', '', '0.000000', '0.000000', 'demo_21', '', '', '0.000000', '0.000000', '0.000000', '0.300000', 2, 1, 0, 0, 0, 0, 1, '301-category', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 1, 0, 0, 0, '2020-12-05 14:02:37', '2020-12-05 15:10:13', 0, 3, 1),
+(16, 0, 2, 7, 1, 1, 0, 0, '', '', '', '', '0.000000', 0, 1, NULL, 0, '60000.000000', '0.000000', '', '0.000000', '0.000000', 'demo_8', '', '', '0.000000', '0.000000', '0.000000', '0.300000', 2, 1, 0, 0, 0, 0, 1, '301-category', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, 0, 28, '2020-12-05 14:02:37', '2020-12-05 15:09:31', 0, 3, 1),
+(17, 0, 2, 7, 1, 1, 0, 0, '', '', '', '', '0.000000', 0, 1, NULL, 0, '70000.000000', '0.000000', '', '0.000000', '0.000000', 'demo_9', '', '', '0.000000', '0.000000', '0.000000', '0.300000', 2, 1, 0, 0, 0, 0, 1, '301-category', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, 0, 32, '2020-12-05 14:02:37', '2020-12-05 15:09:16', 0, 3, 1),
+(18, 0, 2, 7, 1, 1, 0, 0, '', '', '', '', '0.000000', 0, 1, NULL, 0, '50000.000000', '0.000000', '', '0.000000', '0.000000', 'demo_10', '', '', '0.000000', '0.000000', '0.000000', '0.300000', 2, 1, 0, 0, 0, 0, 1, '301-category', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, 0, 36, '2020-12-05 14:02:37', '2020-12-05 15:08:49', 0, 3, 1),
+(19, 0, 1, 8, 1, 1, 0, 0, '', '', '', '', '0.000000', 0, 1, NULL, 0, '90000.000000', '0.000000', '', '0.000000', '0.000000', 'demo_14', '', '', '0.000000', '0.000000', '0.000000', '0.300000', 2, 1, 0, 2, 0, 1, 1, '301-category', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, 0, 0, '2020-12-05 14:02:37', '2020-12-05 15:06:09', 0, 3, 1),
 (20, 0, 0, 2, 1, 1, 0, 0, '', '', '', '', '0.000000', 0, 1, NULL, 0, '0.000000', '0.000000', '', '0.000000', '0.000000', '', '', '', '0.000000', '0.000000', '0.000000', '0.000000', 2, 1, 0, 0, 0, 0, 0, '', 0, 1, '0000-00-00', 0, 'new', 1, 0, 'both', 0, 0, 0, 0, '2020-12-05 14:04:12', '2020-12-05 14:04:12', 0, 3, 0);
 
 -- --------------------------------------------------------
@@ -9695,10 +9797,6 @@ INSERT INTO `ps_product_attribute_image` (`id_product_attribute`, `id_image`) VA
 (6, 1),
 (7, 2),
 (8, 1),
-(9, 0),
-(10, 0),
-(11, 0),
-(12, 0),
 (13, 3),
 (14, 3),
 (15, 3),
@@ -10026,6 +10124,13 @@ CREATE TABLE `ps_product_sale` (
   `date_upd` date DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `ps_product_sale`
+--
+
+INSERT INTO `ps_product_sale` (`id_product`, `quantity`, `sale_nbr`, `date_upd`) VALUES
+(2, 1, 1, '2020-12-05');
+
 -- --------------------------------------------------------
 
 --
@@ -10073,25 +10178,25 @@ CREATE TABLE `ps_product_shop` (
 --
 
 INSERT INTO `ps_product_shop` (`id_product`, `id_shop`, `id_category_default`, `id_tax_rules_group`, `on_sale`, `online_only`, `ecotax`, `minimal_quantity`, `low_stock_threshold`, `low_stock_alert`, `price`, `wholesale_price`, `unity`, `unit_price_ratio`, `additional_shipping_cost`, `customizable`, `uploadable_files`, `text_fields`, `active`, `redirect_type`, `id_type_redirected`, `available_for_order`, `available_date`, `show_condition`, `condition`, `show_price`, `indexed`, `visibility`, `cache_default_attribute`, `advanced_stock_management`, `date_add`, `date_upd`, `pack_stock_type`) VALUES
-(1, 1, 4, 1, 0, 0, '0.000000', 1, NULL, 0, '23.900000', '0.000000', '', '0.000000', '0.000000', 0, 0, 0, 1, '301-category', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 1, 0, '2020-12-05 14:02:37', '2020-12-05 14:02:37', 3),
-(2, 1, 5, 1, 0, 0, '0.000000', 1, NULL, 0, '35.900000', '0.000000', '', '0.000000', '0.000000', 0, 0, 0, 1, '404', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 9, 0, '2020-12-05 14:02:37', '2020-12-05 14:02:37', 3),
-(3, 1, 9, 1, 0, 0, '0.000000', 1, NULL, 0, '29.000000', '0.000000', '', '0.000000', '0.000000', 0, 0, 0, 1, '301-category', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 13, 0, '2020-12-05 14:02:37', '2020-12-05 14:02:37', 3),
-(4, 1, 9, 1, 0, 0, '0.000000', 1, NULL, 0, '29.000000', '0.000000', '', '0.000000', '0.000000', 0, 0, 0, 1, '404', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 16, 0, '2020-12-05 14:02:37', '2020-12-05 14:02:37', 3),
-(5, 1, 9, 1, 0, 0, '0.000000', 1, NULL, 0, '29.000000', '0.000000', '', '0.000000', '0.000000', 0, 0, 0, 1, '301-category', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 19, 0, '2020-12-05 14:02:37', '2020-12-05 14:02:37', 3),
-(6, 1, 8, 1, 0, 0, '0.000000', 1, NULL, 0, '11.900000', '0.000000', '', '0.000000', '0.000000', 0, 0, 0, 1, '301-category', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, '2020-12-05 14:02:37', '2020-12-05 14:02:37', 3),
-(7, 1, 8, 1, 0, 0, '0.000000', 1, NULL, 0, '11.900000', '0.000000', '', '0.000000', '0.000000', 0, 0, 0, 1, '301-category', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, '2020-12-05 14:02:37', '2020-12-05 14:02:37', 3),
-(8, 1, 8, 1, 0, 0, '0.000000', 1, NULL, 0, '11.900000', '0.000000', '', '0.000000', '0.000000', 0, 0, 0, 1, '404', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, '2020-12-05 14:02:37', '2020-12-05 14:02:37', 3),
-(9, 1, 8, 1, 0, 0, '0.000000', 1, NULL, 0, '18.900000', '0.000000', '', '0.000000', '0.000000', 0, 0, 0, 1, '301-category', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 22, 0, '2020-12-05 14:02:37', '2020-12-05 14:02:37', 3),
-(10, 1, 8, 1, 0, 0, '0.000000', 1, NULL, 0, '18.900000', '0.000000', '', '0.000000', '0.000000', 0, 0, 0, 1, '301-category', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 24, 0, '2020-12-05 14:02:37', '2020-12-05 14:02:37', 3),
-(11, 1, 8, 1, 0, 0, '0.000000', 1, NULL, 0, '18.900000', '0.000000', '', '0.000000', '0.000000', 0, 0, 0, 1, '301-category', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 26, 0, '2020-12-05 14:02:37', '2020-12-05 14:02:37', 3),
-(12, 1, 9, 1, 0, 0, '0.000000', 1, NULL, 0, '9.000000', '0.000000', '', '0.000000', '0.000000', 0, 0, 0, 1, '301-category', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, '2020-12-05 14:02:37', '2020-12-05 14:02:37', 3),
-(13, 1, 9, 1, 0, 0, '0.000000', 1, NULL, 0, '9.000000', '0.000000', '', '0.000000', '0.000000', 0, 0, 0, 1, '301-category', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, '2020-12-05 14:02:37', '2020-12-05 14:02:37', 3),
-(14, 1, 9, 1, 0, 0, '0.000000', 1, NULL, 0, '9.000000', '0.000000', '', '0.000000', '0.000000', 0, 0, 0, 1, '301-category', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, '2020-12-05 14:02:37', '2020-12-05 14:02:37', 3),
-(15, 1, 8, 1, 0, 0, '0.000000', 1, NULL, 0, '35.000000', '0.000000', '', '0.000000', '0.000000', 0, 0, 0, 1, '301-category', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, '2020-12-05 14:02:37', '2020-12-05 14:02:37', 3),
-(16, 1, 7, 1, 0, 0, '0.000000', 1, NULL, 0, '12.900000', '0.000000', '', '0.000000', '0.000000', 0, 0, 0, 1, '301-category', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 28, 0, '2020-12-05 14:02:37', '2020-12-05 14:02:37', 3),
-(17, 1, 7, 1, 0, 0, '0.000000', 1, NULL, 0, '12.900000', '0.000000', '', '0.000000', '0.000000', 0, 0, 0, 1, '301-category', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 32, 0, '2020-12-05 14:02:37', '2020-12-05 14:02:37', 3),
-(18, 1, 7, 1, 0, 0, '0.000000', 1, NULL, 0, '12.900000', '0.000000', '', '0.000000', '0.000000', 0, 0, 0, 1, '301-category', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 36, 0, '2020-12-05 14:02:37', '2020-12-05 14:02:37', 3),
-(19, 1, 8, 1, 0, 0, '0.000000', 1, NULL, 0, '13.900000', '0.000000', '', '0.000000', '0.000000', 1, 0, 1, 1, '301-category', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, '2020-12-05 14:02:37', '2020-12-05 14:02:37', 3),
+(1, 1, 4, 1, 0, 0, '0.000000', 1, NULL, 0, '99000.000000', '0.000000', '', '0.000000', '0.000000', 0, 0, 0, 1, '301-category', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 1, 0, '2020-12-05 14:02:37', '2020-12-05 15:12:33', 3),
+(2, 1, 5, 1, 0, 0, '0.000000', 1, NULL, 0, '99000.000000', '0.000000', '', '0.000000', '0.000000', 0, 0, 0, 1, '404', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 9, 0, '2020-12-05 14:02:37', '2020-12-05 15:12:29', 3),
+(3, 1, 9, 1, 0, 0, '0.000000', 1, NULL, 0, '99000.000000', '0.000000', '', '0.000000', '0.000000', 0, 0, 0, 1, '301-category', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 13, 0, '2020-12-05 14:02:37', '2020-12-05 15:12:26', 3),
+(4, 1, 9, 1, 0, 0, '0.000000', 1, NULL, 0, '99000.000000', '0.000000', '', '0.000000', '0.000000', 0, 0, 0, 1, '404', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 16, 0, '2020-12-05 14:02:37', '2020-12-05 15:12:22', 3),
+(5, 1, 9, 1, 0, 0, '0.000000', 1, NULL, 0, '99000.000000', '0.000000', '', '0.000000', '0.000000', 0, 0, 0, 1, '301-category', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 19, 0, '2020-12-05 14:02:37', '2020-12-05 15:12:19', 3),
+(6, 1, 8, 1, 0, 0, '0.000000', 1, NULL, 0, '99000.000000', '0.000000', '', '0.000000', '0.000000', 0, 0, 0, 1, '301-category', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, '2020-12-05 14:02:37', '2020-12-05 15:12:14', 3),
+(7, 1, 8, 1, 0, 0, '0.000000', 1, NULL, 0, '99000.000000', '0.000000', '', '0.000000', '0.000000', 0, 0, 0, 1, '301-category', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, '2020-12-05 14:02:37', '2020-12-05 15:12:10', 3),
+(8, 1, 8, 1, 0, 0, '0.000000', 1, NULL, 0, '99000.000000', '0.000000', '', '0.000000', '0.000000', 0, 0, 0, 1, '404', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, '2020-12-05 14:02:37', '2020-12-05 15:12:08', 3),
+(9, 1, 8, 1, 0, 0, '0.000000', 1, NULL, 0, '99000.000000', '0.000000', '', '0.000000', '0.000000', 0, 0, 0, 1, '301-category', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 22, 0, '2020-12-05 14:02:37', '2020-12-05 15:11:34', 3),
+(10, 1, 8, 1, 0, 0, '0.000000', 1, NULL, 0, '99000.000000', '0.000000', '', '0.000000', '0.000000', 0, 0, 0, 1, '301-category', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 24, 0, '2020-12-05 14:02:37', '2020-12-05 15:11:20', 3),
+(11, 1, 8, 1, 0, 0, '0.000000', 1, NULL, 0, '99000.000000', '0.000000', '', '0.000000', '0.000000', 0, 0, 0, 1, '301-category', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 26, 0, '2020-12-05 14:02:37', '2020-12-05 15:11:10', 3),
+(12, 1, 9, 1, 0, 0, '0.000000', 1, NULL, 0, '99000.000000', '0.000000', '', '0.000000', '0.000000', 0, 0, 0, 1, '301-category', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, '2020-12-05 14:02:37', '2020-12-05 15:11:00', 3),
+(13, 1, 9, 1, 0, 0, '0.000000', 1, NULL, 0, '99000.000000', '0.000000', '', '0.000000', '0.000000', 0, 0, 0, 1, '301-category', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, '2020-12-05 14:02:37', '2020-12-05 15:10:46', 3),
+(14, 1, 9, 1, 0, 0, '0.000000', 1, NULL, 0, '99000.000000', '0.000000', '', '0.000000', '0.000000', 0, 0, 0, 1, '301-category', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, '2020-12-05 14:02:37', '2020-12-05 15:10:30', 3),
+(15, 1, 8, 1, 0, 0, '0.000000', 1, NULL, 0, '60000.000000', '0.000000', '', '0.000000', '0.000000', 0, 0, 0, 1, '301-category', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, '2020-12-05 14:02:37', '2020-12-05 15:10:13', 3),
+(16, 1, 7, 1, 0, 0, '0.000000', 1, NULL, 0, '60000.000000', '0.000000', '', '0.000000', '0.000000', 0, 0, 0, 1, '301-category', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 28, 0, '2020-12-05 14:02:37', '2020-12-05 15:09:31', 3),
+(17, 1, 7, 1, 0, 0, '0.000000', 1, NULL, 0, '70000.000000', '0.000000', '', '0.000000', '0.000000', 0, 0, 0, 1, '301-category', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 32, 0, '2020-12-05 14:02:37', '2020-12-05 15:09:16', 3),
+(18, 1, 7, 1, 0, 0, '0.000000', 1, NULL, 0, '50000.000000', '0.000000', '', '0.000000', '0.000000', 0, 0, 0, 1, '301-category', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 36, 0, '2020-12-05 14:02:37', '2020-12-05 15:08:49', 3),
+(19, 1, 8, 1, 0, 0, '0.000000', 1, NULL, 0, '90000.000000', '0.000000', '', '0.000000', '0.000000', 2, 0, 1, 1, '301-category', 0, 1, '0000-00-00', 0, 'new', 1, 1, 'both', 0, 0, '2020-12-05 14:02:37', '2020-12-05 15:06:09', 3),
 (20, 1, 2, 1, 0, 0, '0.000000', 1, NULL, 0, '0.000000', '0.000000', '', '0.000000', '0.000000', 0, 0, 0, 0, '', 0, 1, '0000-00-00', 0, 'new', 1, 0, 'both', 0, 0, '2020-12-05 14:04:12', '2020-12-05 14:04:12', 3);
 
 -- --------------------------------------------------------
@@ -10587,6 +10692,7 @@ INSERT INTO `ps_search_index` (`id_product`, `id_word`, `weight`) VALUES
 (1, 15, 1),
 (1, 16, 1),
 (1, 17, 1),
+(1, 18, 1),
 (1, 19, 1),
 (1, 20, 1),
 (1, 21, 1),
@@ -10617,11 +10723,11 @@ INSERT INTO `ps_search_index` (`id_product`, `id_word`, `weight`) VALUES
 (1, 48, 1),
 (1, 49, 1),
 (1, 50, 1),
-(1, 52, 2),
-(1, 53, 2),
+(1, 909, 2),
+(1, 910, 2),
+(1, 1228, 2),
 (1, 11, 3),
 (1, 12, 3),
-(1, 18, 3),
 (1, 51, 3),
 (1, 25, 4),
 (1, 26, 4),
@@ -10636,6 +10742,7 @@ INSERT INTO `ps_search_index` (`id_product`, `id_word`, `weight`) VALUES
 (2, 9, 1),
 (2, 10, 1),
 (2, 14, 1),
+(2, 18, 1),
 (2, 27, 1),
 (2, 28, 1),
 (2, 29, 1),
@@ -10665,9 +10772,9 @@ INSERT INTO `ps_search_index` (`id_product`, `id_word`, `weight`) VALUES
 (2, 57, 1),
 (2, 58, 1),
 (2, 59, 1),
+(2, 1228, 2),
 (2, 12, 3),
 (2, 15, 3),
-(2, 18, 3),
 (2, 60, 3),
 (2, 25, 4),
 (2, 26, 4),
@@ -10905,14 +11012,15 @@ INSERT INTO `ps_search_index` (`id_product`, `id_word`, `weight`) VALUES
 (9, 323, 1),
 (9, 324, 1),
 (9, 325, 1),
-(9, 52, 2),
-(9, 53, 2),
+(9, 326, 1),
+(9, 909, 2),
+(9, 910, 2),
+(9, 911, 2),
 (9, 25, 3),
 (9, 26, 3),
 (9, 241, 3),
 (9, 242, 3),
 (9, 307, 3),
-(9, 326, 3),
 (9, 308, 4),
 (9, 304, 7),
 (9, 305, 7),
@@ -10942,14 +11050,15 @@ INSERT INTO `ps_search_index` (`id_product`, `id_word`, `weight`) VALUES
 (10, 323, 1),
 (10, 324, 1),
 (10, 325, 1),
-(10, 52, 2),
-(10, 53, 2),
+(10, 326, 1),
+(10, 909, 2),
+(10, 910, 2),
+(10, 911, 2),
 (10, 25, 3),
 (10, 26, 3),
 (10, 241, 3),
 (10, 242, 3),
 (10, 307, 3),
-(10, 326, 3),
 (10, 308, 4),
 (10, 341, 7),
 (10, 342, 7),
@@ -10979,14 +11088,15 @@ INSERT INTO `ps_search_index` (`id_product`, `id_word`, `weight`) VALUES
 (11, 323, 1),
 (11, 324, 1),
 (11, 325, 1),
-(11, 52, 2),
-(11, 53, 2),
+(11, 326, 1),
+(11, 909, 2),
+(11, 910, 2),
+(11, 911, 2),
 (11, 25, 3),
 (11, 26, 3),
 (11, 241, 3),
 (11, 242, 3),
 (11, 307, 3),
-(11, 326, 3),
 (11, 308, 4),
 (11, 1, 7),
 (11, 306, 8),
@@ -11350,6 +11460,7 @@ INSERT INTO `ps_search_word` (`id_word`, `id_shop`, `id_lang`, `word`) VALUES
 (49, 1, 1, 'guaranteed'),
 (520, 1, 1, 'hard'),
 (235, 1, 1, 'height'),
+(909, 1, 1, 'hitam'),
 (241, 1, 1, 'home'),
 (1, 1, 1, 'hummingbird'),
 (325, 1, 1, 'hypoallergenic'),
@@ -11363,6 +11474,7 @@ INSERT INTO `ps_search_word` (`id_word`, `id_shop`, `id_lang`, `word`) VALUES
 (36, 1, 1, 'japanese'),
 (40, 1, 1, 'jeans'),
 (24, 1, 1, 'joy'),
+(1228, 1, 1, 'katun'),
 (20, 1, 1, 'lightness'),
 (535, 1, 1, 'like'),
 (435, 1, 1, 'limitation'),
@@ -11407,6 +11519,7 @@ INSERT INTO `ps_search_word` (`id_word`, `id_shop`, `id_lang`, `word`) VALUES
 (419, 1, 1, 'personal'),
 (17, 1, 1, 'pima'),
 (542, 1, 1, 'plain'),
+(911, 1, 1, 'poliester'),
 (326, 1, 1, 'polyester'),
 (27, 1, 1, 'polyfaune'),
 (230, 1, 1, 'positive'),
@@ -11420,6 +11533,7 @@ INSERT INTO `ps_search_word` (`id_word`, `id_shop`, `id_lang`, `word`) VALUES
 (238, 1, 1, 'proof'),
 (45, 1, 1, 'provides'),
 (431, 1, 1, 'purpose'),
+(910, 1, 1, 'putih'),
 (532, 1, 1, 'quality'),
 (651, 1, 1, 'quote'),
 (521, 1, 1, 'recycled'),
@@ -11650,6 +11764,31 @@ CREATE TABLE `ps_specific_price_priority` (
   `id_product` int(11) NOT NULL,
   `priority` varchar(80) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `ps_specific_price_priority`
+--
+
+INSERT INTO `ps_specific_price_priority` (`id_specific_price_priority`, `id_product`, `priority`) VALUES
+(1, 19, 'id_shop;id_currency;id_country;id_group'),
+(2, 18, 'id_shop;id_currency;id_country;id_group'),
+(3, 17, 'id_shop;id_currency;id_country;id_group'),
+(4, 16, 'id_shop;id_currency;id_country;id_group'),
+(5, 15, 'id_shop;id_currency;id_country;id_group'),
+(6, 14, 'id_shop;id_currency;id_country;id_group'),
+(7, 13, 'id_shop;id_currency;id_country;id_group'),
+(8, 12, 'id_shop;id_currency;id_country;id_group'),
+(9, 11, 'id_shop;id_currency;id_country;id_group'),
+(10, 10, 'id_shop;id_currency;id_country;id_group'),
+(11, 9, 'id_shop;id_currency;id_country;id_group'),
+(12, 8, 'id_shop;id_currency;id_country;id_group'),
+(13, 7, 'id_shop;id_currency;id_country;id_group'),
+(14, 6, 'id_shop;id_currency;id_country;id_group'),
+(15, 5, 'id_shop;id_currency;id_country;id_group'),
+(16, 4, 'id_shop;id_currency;id_country;id_group'),
+(17, 3, 'id_shop;id_currency;id_country;id_group'),
+(18, 2, 'id_shop;id_currency;id_country;id_group'),
+(19, 1, 'id_shop;id_currency;id_country;id_group');
 
 -- --------------------------------------------------------
 
@@ -12133,7 +12272,7 @@ CREATE TABLE `ps_stock_available` (
 
 INSERT INTO `ps_stock_available` (`id_stock_available`, `id_product`, `id_product_attribute`, `id_shop`, `id_shop_group`, `quantity`, `physical_quantity`, `reserved_quantity`, `depends_on_stock`, `out_of_stock`, `location`) VALUES
 (1, 1, 0, 1, 0, 2400, 0, 0, 0, 2, ''),
-(2, 2, 0, 1, 0, 2095, 2095, 0, 0, 2, ''),
+(2, 2, 0, 1, 0, 2093, 2093, 0, 0, 2, ''),
 (3, 3, 0, 1, 0, 1500, 0, 0, 0, 2, ''),
 (4, 4, 0, 1, 0, 1500, 0, 0, 0, 2, ''),
 (5, 5, 0, 1, 0, 900, 0, 0, 0, 2, ''),
@@ -12150,7 +12289,7 @@ INSERT INTO `ps_stock_available` (`id_stock_available`, `id_product`, `id_produc
 (16, 16, 0, 1, 0, 1200, 0, 0, 0, 2, ''),
 (17, 17, 0, 1, 0, 1200, 0, 0, 0, 2, ''),
 (18, 18, 0, 1, 0, 1200, 0, 0, 0, 2, ''),
-(19, 19, 0, 1, 0, 300, 0, 0, 0, 2, ''),
+(19, 19, 0, 1, 0, 299, 300, 1, 0, 2, ''),
 (20, 1, 1, 1, 0, 300, 0, 0, 0, 2, ''),
 (21, 1, 2, 1, 0, 300, 0, 0, 0, 2, ''),
 (22, 1, 3, 1, 0, 300, 0, 0, 0, 2, ''),
@@ -12159,7 +12298,7 @@ INSERT INTO `ps_stock_available` (`id_stock_available`, `id_product`, `id_produc
 (25, 1, 6, 1, 0, 300, 0, 0, 0, 2, ''),
 (26, 1, 7, 1, 0, 300, 0, 0, 0, 2, ''),
 (27, 1, 8, 1, 0, 300, 0, 0, 0, 2, ''),
-(28, 2, 9, 1, 0, 1195, 1200, 5, 0, 2, ''),
+(28, 2, 9, 1, 0, 1193, 1194, 1, 0, 2, ''),
 (29, 2, 10, 1, 0, 300, 300, 0, 0, 2, ''),
 (30, 2, 11, 1, 0, 300, 300, 0, 0, 2, ''),
 (31, 2, 12, 1, 0, 300, 300, 0, 0, 2, ''),
@@ -12215,6 +12354,13 @@ CREATE TABLE `ps_stock_mvt` (
   `current_wa` decimal(20,6) DEFAULT 0.000000,
   `referer` bigint(20) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `ps_stock_mvt`
+--
+
+INSERT INTO `ps_stock_mvt` (`id_stock_mvt`, `id_stock`, `id_order`, `id_supply_order`, `id_stock_mvt_reason`, `id_employee`, `employee_lastname`, `employee_firstname`, `physical_quantity`, `date_add`, `sign`, `price_te`, `last_wa`, `current_wa`, `referer`) VALUES
+(1, 28, 10, NULL, 3, 1, 'Hidayat', 'Syarif', 1, '2020-12-05 14:53:27', -1, '0.000000', '0.000000', '0.000000', NULL);
 
 -- --------------------------------------------------------
 
@@ -15785,7 +15931,7 @@ ALTER TABLE `ps_address`
 -- AUTO_INCREMENT for table `ps_admin_filter`
 --
 ALTER TABLE `ps_admin_filter`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `ps_advice`
@@ -15833,7 +15979,7 @@ ALTER TABLE `ps_attribute_impact`
 -- AUTO_INCREMENT for table `ps_authorization_role`
 --
 ALTER TABLE `ps_authorization_role`
-  MODIFY `id_authorization_role` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=813;
+  MODIFY `id_authorization_role` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=817;
 
 --
 -- AUTO_INCREMENT for table `ps_badge`
@@ -15851,7 +15997,7 @@ ALTER TABLE `ps_carrier`
 -- AUTO_INCREMENT for table `ps_cart`
 --
 ALTER TABLE `ps_cart`
-  MODIFY `id_cart` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id_cart` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `ps_cart_rule`
@@ -15911,7 +16057,7 @@ ALTER TABLE `ps_condition`
 -- AUTO_INCREMENT for table `ps_configuration`
 --
 ALTER TABLE `ps_configuration`
-  MODIFY `id_configuration` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=465;
+  MODIFY `id_configuration` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=522;
 
 --
 -- AUTO_INCREMENT for table `ps_configuration_kpi`
@@ -15923,7 +16069,7 @@ ALTER TABLE `ps_configuration_kpi`
 -- AUTO_INCREMENT for table `ps_connections`
 --
 ALTER TABLE `ps_connections`
-  MODIFY `id_connections` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_connections` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `ps_connections_source`
@@ -15965,7 +16111,7 @@ ALTER TABLE `ps_customer_message`
 -- AUTO_INCREMENT for table `ps_customer_session`
 --
 ALTER TABLE `ps_customer_session`
-  MODIFY `id_customer_session` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_customer_session` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `ps_customer_thread`
@@ -15977,7 +16123,7 @@ ALTER TABLE `ps_customer_thread`
 -- AUTO_INCREMENT for table `ps_customization`
 --
 ALTER TABLE `ps_customization`
-  MODIFY `id_customization` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id_customization` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `ps_customization_field`
@@ -16013,7 +16159,7 @@ ALTER TABLE `ps_employee`
 -- AUTO_INCREMENT for table `ps_employee_session`
 --
 ALTER TABLE `ps_employee_session`
-  MODIFY `id_employee_session` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_employee_session` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `ps_feature`
@@ -16049,7 +16195,7 @@ ALTER TABLE `ps_group_reduction`
 -- AUTO_INCREMENT for table `ps_guest`
 --
 ALTER TABLE `ps_guest`
-  MODIFY `id_guest` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_guest` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `ps_homeslider`
@@ -16145,7 +16291,7 @@ ALTER TABLE `ps_link_block_shop`
 -- AUTO_INCREMENT for table `ps_log`
 --
 ALTER TABLE `ps_log`
-  MODIFY `id_log` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=250;
+  MODIFY `id_log` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=278;
 
 --
 -- AUTO_INCREMENT for table `ps_mail`
@@ -16181,13 +16327,13 @@ ALTER TABLE `ps_meta`
 -- AUTO_INCREMENT for table `ps_module`
 --
 ALTER TABLE `ps_module`
-  MODIFY `id_module` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=68;
+  MODIFY `id_module` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=69;
 
 --
 -- AUTO_INCREMENT for table `ps_module_history`
 --
 ALTER TABLE `ps_module_history`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `ps_module_preference`
@@ -16211,13 +16357,13 @@ ALTER TABLE `ps_operating_system`
 -- AUTO_INCREMENT for table `ps_orders`
 --
 ALTER TABLE `ps_orders`
-  MODIFY `id_order` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id_order` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `ps_order_carrier`
 --
 ALTER TABLE `ps_order_carrier`
-  MODIFY `id_order_carrier` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id_order_carrier` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `ps_order_cart_rule`
@@ -16229,19 +16375,19 @@ ALTER TABLE `ps_order_cart_rule`
 -- AUTO_INCREMENT for table `ps_order_detail`
 --
 ALTER TABLE `ps_order_detail`
-  MODIFY `id_order_detail` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id_order_detail` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `ps_order_history`
 --
 ALTER TABLE `ps_order_history`
-  MODIFY `id_order_history` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id_order_history` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `ps_order_invoice`
 --
 ALTER TABLE `ps_order_invoice`
-  MODIFY `id_order_invoice` int(11) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id_order_invoice` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `ps_order_message`
@@ -16253,7 +16399,7 @@ ALTER TABLE `ps_order_message`
 -- AUTO_INCREMENT for table `ps_order_payment`
 --
 ALTER TABLE `ps_order_payment`
-  MODIFY `id_order_payment` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_order_payment` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `ps_order_return`
@@ -16277,7 +16423,7 @@ ALTER TABLE `ps_order_slip`
 -- AUTO_INCREMENT for table `ps_order_state`
 --
 ALTER TABLE `ps_order_state`
-  MODIFY `id_order_state` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id_order_state` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `ps_page`
@@ -16421,7 +16567,7 @@ ALTER TABLE `ps_search_engine`
 -- AUTO_INCREMENT for table `ps_search_word`
 --
 ALTER TABLE `ps_search_word`
-  MODIFY `id_word` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=666;
+  MODIFY `id_word` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1327;
 
 --
 -- AUTO_INCREMENT for table `ps_sekeyword`
@@ -16457,7 +16603,7 @@ ALTER TABLE `ps_specific_price`
 -- AUTO_INCREMENT for table `ps_specific_price_priority`
 --
 ALTER TABLE `ps_specific_price_priority`
-  MODIFY `id_specific_price_priority` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_specific_price_priority` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT for table `ps_specific_price_rule`
@@ -16505,7 +16651,7 @@ ALTER TABLE `ps_stock_available`
 -- AUTO_INCREMENT for table `ps_stock_mvt`
 --
 ALTER TABLE `ps_stock_mvt`
-  MODIFY `id_stock_mvt` bigint(20) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_stock_mvt` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `ps_stock_mvt_reason`
